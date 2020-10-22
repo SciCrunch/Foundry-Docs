@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Foundry Ecosystem Gitbook Documentation](README.md)
+* [Foundry Ecosystem](README.md)
 * [LICENSE](license.md)
 
 ## Overview
