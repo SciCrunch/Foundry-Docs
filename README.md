@@ -1,2 +1,2 @@
-# Foundry Ecosystem Gitbook Documentation
+# Foundry Ecosystem
 
