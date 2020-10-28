@@ -16,7 +16,7 @@ Consumer head coordinates a set of consumers. A consumer listens to a preconfigu
 
 All ingestors are implemented as plugins to the `org.neuinfo.foundry.consumers.jms.consumers.GenericIngestionConsumer` class. The currently available ingestor plugins are located in the `org.neuinfo.foundry.consumers.jms.consumers.ingestors` package. The `Ingestor` interface has lifecycle methods to initialize parameters received in the message body to start the ingestion process. This include the harvest url and ingestion type specific parameters defined in the harvest description JSON file stored in the MongoDB under `sources` collection. The `startup()` method is generally used to get the data to an intermediate storage. An ingestor plugin acts like an iterator where `hasNext()` method returns true if there is still more records to process and `prepPayload()` method returns a JSON representation of the original record harvested. The `GenericIngestionConsumer` is responsible for duplicate checking, document wrapper generation.
 
-![Sequence Diagram for Ingestor creation](images/ingestor_creation_seq_diag.png)
+![](../.gitbook/assets/image%20%281%29.png)
 
 ## Implementing a new Enhancer
 
@@ -53,7 +53,7 @@ public interface IPlugin {
 }
 ```
 
-The enhancement is done in the `handle(DBObject docWrapper)` method which takes a Mongo `DBObject` object corresponding to the currently processed [document wrapper](doc_ingestion.md) from the Mongo database. If the original document is small \(less than 1MB\) it will be stored inline in the document wrapper otherwise it will be stored in the Mongo GridFS storage with a pointer in the document wrapper. Below is a code fragment to get the original document converted to JSON from the `docWrapper` regardless of where the original document is stored.
+The enhancement is done in the `handle(DBObject docWrapper)` method which takes a Mongo `DBObject` object corresponding to the currently processed [document wrapper](https://github.com/SciCrunch/Foundry-Docs/tree/7fef8c44b7a5c3646af7eff39b96cbd4789ce260/developer-guide/doc_ingestion.md) from the Mongo database. If the original document is small \(less than 1MB\) it will be stored inline in the document wrapper otherwise it will be stored in the Mongo GridFS storage with a pointer in the document wrapper. Below is a code fragment to get the original document converted to JSON from the `docWrapper` regardless of where the original document is stored.
 
 ```java
 BasicDBObject data = (BasicDBObject) docWrapper.get("Data");
@@ -104,11 +104,11 @@ return r;
 
 ### Resource Enhancer
 
-**Full Path:**   
- `Foundry-ES/consumers/src/main/java/org/neuinfo/foundry/consumers/jms/consumers/plugins/scicrunch/ResourceEnhancer.java`
+**Full Path:**  
+`Foundry-ES/consumers/src/main/java/org/neuinfo/foundry/consumers/jms/consumers/plugins/scicrunch/ResourceEnhancer.java`
 
-**Synopsis:**   
- By using the records' rrid, it queries Elasticsearch within the 'rrid\_mentions' index to retrieve the total count of records that have mentioned it, retrieving the count of rrid and \(rrid + resource\) mentions.
+**Synopsis:**  
+By using the records' rrid, it queries Elasticsearch within the 'rrid\_mentions' index to retrieve the total count of records that have mentioned it, retrieving the count of rrid and \(rrid + resource\) mentions.
 
 ```text
 "mentions" : [
@@ -116,7 +116,7 @@ return r;
         "totalRRIDMentions" : {"count" : #}
         "totalMentions" : {"count" : #}
     }
-] 
+]
 ```
 
 **Note:** This enhancer expects the following parameters to be defined when initialized:
@@ -128,11 +128,10 @@ return r;
 
 ### Resource Enhancer Tester
 
-**Full Path:**   
- `Foundry-ES/consumers/src/test/java/org/neuinfo/foundry/consumers/ResourceMentionsEnhancerTests.java`
+**Full Path:**  
+`Foundry-ES/consumers/src/test/java/org/neuinfo/foundry/consumers/ResourceMentionsEnhancerTests.java`
 
-**Synopsis:** This class tests the correctness of the Resource Mentions Enhancer   
-
+**Synopsis:** This class tests the correctness of the Resource Mentions Enhancer
 
 **Note:** As stated above, be sure to include the four specified parameters when initializing the plugin
 
