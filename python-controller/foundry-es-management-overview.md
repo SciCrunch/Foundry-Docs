@@ -12,7 +12,3 @@ Foundry is a message-oriented, horizontally scalable ETL system for scientific d
 
 ![Foundry - ES Management Overview](../.gitbook/assets/image%20%282%29.png)
 
-
-
-
-
