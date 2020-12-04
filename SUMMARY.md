@@ -19,3 +19,8 @@
 
 * [Original Wiki Content](api/original-wiki-content.md)
 
+## Python Controller
+
+* [Foundry-ES Management \(Overview\)](python-controller/foundry-es-management-overview.md)
+* [Python Controller](python-controller/untitled.md)
+
