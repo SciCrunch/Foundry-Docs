@@ -121,7 +121,33 @@ transform column "$.pmid" to "dc.identifier" apply concat("pmid:",value);
   }
 }
 ```
+`concat` function takes arbitary number of arguments. Below is an example usage to build an RRID from id, vendor and catalog number information;
 
+**Input Document**
+```json
+{
+    "id": "AB_12345",
+    "vendor": "ABCAM",
+    "cat_num": "125"
+}
+```
+**Transformation script**
+```
+transform columns "$.'id'", "$.'vendor'", "$.'cat_num'" to "rrid.properCitation" apply concat("(",value2, " Cat# ", value3,", RRID:", value1,")");
+```
+
+**Resulting document**
+```json
+{
+  "rrid": {
+    "properCitation": "(ABCAMCat#125, RRID:AB_12345)"
+  }
+}
+```
+**Python equivalent (less efficient)**
+```
+transform columns "$.'id'", "$.'vendor'", "$.'cat_num'" to "rrid.properCitation" apply {{ result = '(' + value2 + ' Cat# ' + value3 + ', RRID:' + value1 + ')' }};
+```
 # assignIfElse
 
 This function takes four arguments; 
