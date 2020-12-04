@@ -178,3 +178,7 @@ transform columns  "$.pmid", "$.refType"  to "curie" apply concatAssignIfElse("p
   "curie": "pmid:12345678"
 }
 ```
+***Python equivalent (less efficient)***
+```
+transform columns  "$.pmid", "$.refType"  to "curie" apply {{ result = 'pmid:' + value1 if value2 == 'paper' else None}};
+```
