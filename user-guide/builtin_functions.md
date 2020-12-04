@@ -1,5 +1,8 @@
 # Transformation Language Builtin Functions
 
+Foundry transformation language is expandable with builtin functions. The following are the currently available builtin functions. Builtion functions are upto three time faster than their corresponding Python `APPLY` blocks and they should be used instead of Python `APPLY` blocks whenever it is possible.
+
+
 ## UUID Generator
 
 **Input document**
