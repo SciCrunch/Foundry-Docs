@@ -147,6 +147,10 @@ transform column "$.majorTopic" to "majorTopic" apply assignIfElse("true",value,
   "majorTopic": "true"
 }
 ```
+***Python equivalent (less efficient)***
+```
+transform column "$.majorTopic" to "majorTopic" apply {{ result = 'true' if value == 'Y' else 'false' }};
+```
 # concatAssignIfElse
 
 This function is similar to `assignIfElse` function above and takes 5 arguments;
