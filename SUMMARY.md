@@ -3,7 +3,7 @@
 * [Foundry Ecosystem](README.md)
 * [LICENSE](license.md)
 
-## Overview
+## Foundry Overview <a id="overview"></a>
 
 * [Untitled](overview/untitled.md)
 
@@ -23,4 +23,8 @@
 
 * [Foundry-ES Management \(Overview\)](python-controller/foundry-es-management-overview.md)
 * [Python Controller](python-controller/untitled.md)
+
+## Appendices
+
+* [Citation Information](appendices/citation-information.md)
 
