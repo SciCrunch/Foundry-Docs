@@ -18,13 +18,17 @@
 * [Standards and Best Practices](user-guide/standards-and-best-practices.md)
 * [Untitled](user-guide/untitled.md)
 * [Helper Scripts for Foundry Ingestion](user-guide/helper-scripts-for-foundry-ingestion.md)
+* [Debugging Hints](user-guide/debugging-hints.md)
+* [NCBI LinkOut](user-guide/ncbi-linkout.md)
 
 ## Foundry Developer Guide <a id="developer-guide"></a>
 
-* [Original Wiki Content](developer-guide/original-wiki-content.md)
+* [Introduction](developer-guide/original-wiki-content.md)
+* [Installation Guide](developer-guide/installation-guide.md)
 * [Dispatcher](developer-guide/dispatcher.md)
 * [Consumer Head](developer-guide/consumer-head.md)
 * [Implementing a new Enhancer](developer-guide/implementing-a-new-enhancer.md)
+* [Document Ingestion](developer-guide/document-ingestion.md)
 
 ## Foundry Enhancers
 
@@ -52,4 +56,5 @@
 ## Appendices
 
 * [Citation Information](appendices/citation-information.md)
+* [Useful Tools](appendices/useful-tools.md)
 
