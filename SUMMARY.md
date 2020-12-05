@@ -13,9 +13,11 @@
 * [Data Transform Language](foundry-overview/foundry-data-transform-language.md)
 * [Foundry Data Export](foundry-overview/foundry-data-export.md)
 
-## Foundry User Guide <a id="user-guide"></a>
+## Foundry Curator Guide <a id="user-guide"></a>
 
+* [Standards and Best Practices](user-guide/standards-and-best-practices.md)
 * [Untitled](user-guide/untitled.md)
+* [Helper Scripts for Foundry Ingestion](user-guide/helper-scripts-for-foundry-ingestion.md)
 
 ## Foundry Developer Guide <a id="developer-guide"></a>
 

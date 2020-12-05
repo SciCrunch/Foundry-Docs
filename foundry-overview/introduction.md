@@ -18,7 +18,7 @@ Development of the Foundry infrastructure was informed by the following three di
 * Ability to develop additional processing modules that can be integrated with the overall workflow to further enhance the data and metadata records.
 * Export mechanisms for the enhanced/transformed data to Elasticsearch search engine endpoints or to local file structures.
 
-
+![](../.gitbook/assets/image%20%2821%29.png)
 
 
 
