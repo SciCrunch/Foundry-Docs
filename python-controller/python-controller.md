@@ -10,10 +10,18 @@ Following diagram depicts a typical workflow followed by Controller. During the 
 
 Controller supports two types of workflows: Stand-Alone workflows, which can be run independently and Integrated workflows, which is combination of independent workflows.
 
-* **Ingest \(Stand-alone Workflow\)** : Ingest the new / updated records in the source
-* **Run \(Stand-alone Workflow\)** : Reprocess the documents from Error state. ![Ingest - Run Workflow](https://github.com/SciCrunch/Foundry-Python/blob/master/images/Foundry%20-%20Ingest-Run%20workflow.jpeg)
-* **Index \(Stand-alone Workflow\)** : Index the new / updated documents to the ES ![Index Workflow](https://github.com/SciCrunch/Foundry-Python/blob/master/images/Foundry%20-%20Index%20workflow.jpeg)
-* **Update \(Integrated Workflow\)**: Executes the ingest followed by index workflow
+* **Ingest \(Stand-alone Workflow\)** : Ingest the new / updated records in the source.
+* **Run \(Stand-alone Workflow\)** : Reprocess the documents from Error state.
+
+If ingest workflow ends in Error, controller internally enters into Run workflow. It executes three cycles of Run workflow. If the errors are resolved the source status changes to Finished, else it remains in Error state and Indexing gets cancelled.
+
+![](../.gitbook/assets/image%20%2819%29.png)
+
+* **Index \(Stand-alone Workflow\)** : Index the new / updated documents to the ES.
+
+![](../.gitbook/assets/image%20%2820%29.png)
+
+* **Update \(Integrated Workflow\)**: Executes the ingest followed by index workflow.
 * **Reprocess \(Integrated Workflow\)** : Reprocess the documents from Finished state. Executes Run workflow from ‘finished’ state, followed by Index workflow without any filter.
 
 ## Command Line Parameters
