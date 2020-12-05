@@ -41,11 +41,11 @@
 * [Foundry-ES Management \(Overview\)](python-controller/foundry-es-management-overview.md)
 * [Python Controller](python-controller/python-controller.md)
 
-## Appendices
-
-* [Citation Information](appendices/citation-information.md)
-
 ## Foundry Dashboard
 
 * [Workflows](foundry-dashboard/workflows.md)
+
+## Appendices
+
+* [Citation Information](appendices/citation-information.md)
 
