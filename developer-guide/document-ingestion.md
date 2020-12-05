@@ -108,3 +108,23 @@ Below is the PROV-JSON document generated and also validated against PROV-JSON J
 }
 ```
 
+#### Configuration of XML document ingestor
+
+All ingestors are configured via the `ingestor-cfg.xml` file residing in `$FOUNDRY_HOME/ingestor/src/main/resources` directory.
+
+```markup
+    <ingestor-cfg>
+      <mongo-config db="discotest">
+        <servers>
+          <server host="burak.crbs.ucsd.edu" port="27017"/>
+          <server host="burak.crbs.ucsd.edu" port="27018"/>
+        </servers>
+      </mongo-config>
+      <source nifId="nlx_152590">
+         <xml-file path="/tmp/open_source_brain_projects.xml" rootEl="projects" docEl="project"/>
+      </source>
+    </ingestor-cfg>
+```
+
+Here the data to ingest for source with nifId `nlx_152590` is read from the XML file `/tmp/open_source_brain_projects.xml` where each document to be ingested are rooted at the tag `project` under the `projects` tag.
+

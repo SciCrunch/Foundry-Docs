@@ -10,3 +10,21 @@ All ingestors are implemented as plugins to the `org.neuinfo.foundry.consumers.j
 
 ![](../.gitbook/assets/image%20%281%29.png)
 
+#### Configuration of Consumers
+
+All consumers are configured via the `consumers-cfg.xml` file residing in `$FOUNDRY_HOME/consumers/src/main/resources` directory.
+
+```markup
+    <consumers-cfg>
+      <mongo-config db="discotest" collection="records">
+        <servers>
+          <server host="burak.crbs.ucsd.edu" port="27017"/>
+          <server host="burak.crbs.ucsd.edu" port="27018"/>
+        </servers>
+      </mongo-config>
+      <activemq-config>
+         <brokerURL>tcp://localhost:61616</brokerURL>
+      </activemq-config>
+    </consumers-cfg>
+```
+
