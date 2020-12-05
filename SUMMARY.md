@@ -34,3 +34,7 @@
 
 * [Citation Information](appendices/citation-information.md)
 
+## Foundry Dashboard
+
+* [Workflows](foundry-dashboard/workflows.md)
+
