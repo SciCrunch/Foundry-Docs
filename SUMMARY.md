@@ -13,13 +13,24 @@
 * [Data Transform Language](foundry-overview/foundry-data-transform-language.md)
 * [Foundry Data Export](foundry-overview/foundry-data-export.md)
 
-## User Guide
+## Foundry User Guide <a id="user-guide"></a>
 
 * [Untitled](user-guide/untitled.md)
 
-## Developer Guide
+## Foundry Developer Guide <a id="developer-guide"></a>
 
 * [Original Wiki Content](developer-guide/original-wiki-content.md)
+* [Dispatcher](developer-guide/dispatcher.md)
+* [Consumer Head](developer-guide/consumer-head.md)
+* [Implementing a new Enhancer](developer-guide/implementing-a-new-enhancer.md)
+
+## Foundry Enhancers
+
+* [Resource Enhancer](foundry-enhancers/resource-enhancer.md)
+* [Semantic Enhancer](foundry-enhancers/semantic-enhancer.md)
+* [Relation Enhancer](foundry-enhancers/relation-enhancer.md)
+* [Resource Validator](foundry-enhancers/resource-validator.md)
+* [Quality Control](foundry-enhancers/quality-control.md)
 
 ## API
 
