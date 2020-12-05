@@ -2,7 +2,7 @@
 description: Overview of the Foundry Message-oriented middleware (MoM) system
 ---
 
-# System Design Overview
+# System Design
 
 #### System design <a id="129408862"></a>
 

@@ -2,7 +2,7 @@
 description: Overview of the Foundry Consumer Coordinator
 ---
 
-# Foundry Consumer Coordinator
+# Consumer Coordinator
 
 ### Consumer Container architecture
 

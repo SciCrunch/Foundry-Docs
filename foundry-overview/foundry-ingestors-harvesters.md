@@ -1,8 +1,8 @@
 ---
-description: Overview of
+description: Overview of resource ingestion / harvest within Foundry
 ---
 
-# Foundry Ingestors / Harvesters
+# Ingestors / Harvesters
 
 ###  **Ingestors \(Harvesters\)**
 

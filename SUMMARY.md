@@ -6,11 +6,11 @@
 ## Foundry Overview
 
 * [Introduction](foundry-overview/introduction.md)
-* [System Design Overview](foundry-overview/system-design-overview.md)
-* [Foundry Dispatcher](foundry-overview/foundry-dispatcher.md)
-* [Foundry Consumer Coordinator](foundry-overview/foundry-consumer-coordinator.md)
-* [Foundry Ingestors / Harvesters](foundry-overview/foundry-ingestors-harvesters.md)
-* [Foundry Data Transform Language](foundry-overview/foundry-data-transform-language.md)
+* [System Design](foundry-overview/system-design-overview.md)
+* [Dispatcher](foundry-overview/foundry-dispatcher.md)
+* [Consumer Coordinator](foundry-overview/foundry-consumer-coordinator.md)
+* [Ingestors / Harvesters](foundry-overview/foundry-ingestors-harvesters.md)
+* [Data Transform Language](foundry-overview/foundry-data-transform-language.md)
 * [Foundry Data Export](foundry-overview/foundry-data-export.md)
 
 ## User Guide

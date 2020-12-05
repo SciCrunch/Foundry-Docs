@@ -2,7 +2,7 @@
 description: Overview of the Foundry Dispatcher subsystem
 ---
 
-# Foundry Dispatcher
+# Dispatcher
 
 The dispatcher subsystem coordinates messages coming from consumers/enhancers and relays them to corresponding message queues as configured by a particular data enhancement/transformation workflow. Each workflow is configured as a routing table. A route associates a status label with a message queue. Special status labels are specified to indicate the start and the end of the pipeline. Each consumer/enhancer is configured to listen for messages with a certain status label on a particular message queue. When the consumer finishes processing a data record, it puts a message to a preconfigured message queue with a consumer-specific output status label for the dispatcher to pick up. The dispatcher creates a new message with the output status label received and puts it to the message queue of the matching route in the pipeline route table. This process continues until there is no route left in the pipeline route table. The dispatcher is a lightweight component acting as an event bus. The heavy lifting is done by the consumers running inside the consumer container\(s\).
 
