@@ -208,3 +208,47 @@ transform columns  "$.pmid", "$.refType"  to "curie" apply concatAssignIfElse("p
 ```
 transform columns  "$.pmid", "$.refType"  to "curie" apply {{ result = 'pmid:' + value1 if value2 == 'paper' else None}};
 ```
+
+# toList
+
+This function can be used to convert a string containing a delimited list of items into a list. It takes two arguments;
+
+* The actual source field value
+* the delimeter string that separates items in the first argument value
+
+**Input Document**
+```json
+{
+  "supporting_agency": "NIH, NIDDK"
+}
+```
+**Transformation script**
+```
+transform column "$.'supporting_agency'" to "supportingAwards[].agency.name" apply toList(value,",");
+```
+**Resulting document**
+```json
+{
+  "supportingAwards": [
+    {
+      "agency": {
+        "name": "NIH"
+      }
+    },
+    {
+      "agency": {
+        "name": "NIDDK"
+      }
+    }
+  ]
+}
+```
+***Python equivalent (less efficient)***
+```
+transform column "$.'supporting_agency'" to "supportingAwards[].agency.name" apply
+{{
+list = re.split('\s*,\s*',value)
+result = [x.strip() for x in list]
+}};
+
+```
