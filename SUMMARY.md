@@ -21,6 +21,14 @@
 * [Debugging Hints](curator-guide/debugging-hints.md)
 * [NCBI LinkOut](curator-guide/ncbi-linkout.md)
 
+## Foundry User Guide <a id="user-guide"></a>
+
+* [Built in Functions](user-guide/builtin_functions.md)
+* [CSV Ingestor](user-guide/csv_ingestor_config.md)
+* [Database Ingestor](user-guide/db_ingestor_cfg.md)
+* [FTP Ingestor](user-guide/ftp_ingestor_cfg.md)
+* [Web Ingestor](user-guide/web_ingestor_cfg.md)
+
 ## Foundry Developer Guide <a id="developer-guide"></a>
 
 * [Introduction](developer-guide/original-wiki-content.md)
