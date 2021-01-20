@@ -13,13 +13,13 @@
 * [Data Transform Language](foundry-overview/foundry-data-transform-language.md)
 * [Foundry Data Export](foundry-overview/foundry-data-export.md)
 
-## Foundry Curator Guide <a id="user-guide"></a>
+## Foundry Curator Guide <a id="curator-guide"></a>
 
-* [Standards and Best Practices](user-guide/standards-and-best-practices.md)
-* [End to End Source Ingestion Tutorial](user-guide/untitled.md)
-* [Helper Scripts for Foundry Ingestion](user-guide/helper-scripts-for-foundry-ingestion.md)
-* [Debugging Hints](user-guide/debugging-hints.md)
-* [NCBI LinkOut](user-guide/ncbi-linkout.md)
+* [Standards and Best Practices](curator-guide/standards-and-best-practices.md)
+* [End to End Source Ingestion Tutorial](curator-guide/untitled.md)
+* [Helper Scripts for Foundry Ingestion](curator-guide/helper-scripts-for-foundry-ingestion.md)
+* [Debugging Hints](curator-guide/debugging-hints.md)
+* [NCBI LinkOut](curator-guide/ncbi-linkout.md)
 
 ## Foundry Developer Guide <a id="developer-guide"></a>
 
