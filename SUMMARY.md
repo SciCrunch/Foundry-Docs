@@ -16,7 +16,7 @@
 ## Foundry Curator Guide <a id="curator-guide"></a>
 
 * [Standards and Best Practices](curator-guide/standards-and-best-practices.md)
-* [End to End Source Ingestion Tutorial](curator-guide/untitled.md)
+* [End to End Source Ingestion Tutorial](curator-guide/source-ingestion-tutorial.md)
 * [Helper Scripts for Foundry Ingestion](curator-guide/helper-scripts-for-foundry-ingestion.md)
 * [Debugging Hints](curator-guide/debugging-hints.md)
 * [NCBI LinkOut](curator-guide/ncbi-linkout.md)
