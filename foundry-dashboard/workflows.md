@@ -6,5 +6,5 @@ description: Describes the workflow of how the pages of the Foundry Dashboard ge
 
 
 
-![](../.gitbook/assets/foundry-dashboard-workflow.pdf)
+![](../.gitbook/assets/foundry-dashboard-workflow-3-.png)
 
