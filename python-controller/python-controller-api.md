@@ -68,6 +68,18 @@ Process request started
 }
 ```
 {% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+Missing / Invalid resourceID 
+{% endapi-method-response-example-description %}
+
+```
+{
+    "message": "<Invalid Resource | Specify ResourceID>"
+}
+```
+{% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
