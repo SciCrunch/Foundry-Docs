@@ -46,9 +46,16 @@
 * [Resource Validator](foundry-enhancers/resource-validator.md)
 * [Quality Control](foundry-enhancers/quality-control.md)
 
-## API
+## Foundry API
 
-* [Original Wiki Content](api/original-wiki-content.md)
+* [Foundry API Overview](foundry-api/foundry-api-overview.md)
+* [Foundry API: Status Information](foundry-api/foundry-api-status-information.md)
+* [Foundry API: Source Information](foundry-api/foundry-api-source-information.md)
+* [Foundry API: Source Ingestion](foundry-api/foundry-api-source-ingestion.md)
+* [Foundry API: Run a Source](foundry-api/foundry-api-run-a-source.md)
+* [Foundry API: Indexing](foundry-api/foundry-api-indexing.md)
+* [Foundry API: Reset a Source](foundry-api/foundry-api-reset-a-source.md)
+* [Foundry API: Document Information](foundry-api/original-wiki-content.md)
 
 ## Python Controller
 
