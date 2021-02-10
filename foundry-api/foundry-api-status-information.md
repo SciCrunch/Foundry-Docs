@@ -1,4 +1,4 @@
-# Foundry API: Status Information
+# Foundry API: Status Information \(OLD\)
 
 ### `GET dashboard/status`
 

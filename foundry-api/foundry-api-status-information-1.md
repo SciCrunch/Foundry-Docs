@@ -32,7 +32,7 @@ Source to be ingested
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
   "sourceID": "SCR_013869-Cellosaurus-RIN",
   "dataSource": "SCR_013869-Cellosaurus-RIN",
@@ -66,7 +66,7 @@ Source to be ingested
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -76,7 +76,7 @@ Source to be ingested
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -86,7 +86,7 @@ Source to be ingested
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -96,7 +96,7 @@ Source to be ingested
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -117,7 +117,7 @@ Gives the status of all the sources
 {% api-method-request %}
 {% api-method-query-parameters %}
 {% api-method-parameter name="apiKey" type="string" required=true %}
-Authentication Token 
+Authentication Token
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -128,7 +128,7 @@ Authentication Token
 A JSON array of JSON objects, one per source
 {% endapi-method-response-example-description %}
 
-```
+```text
 [
   {
     "sourceID": "SCR_013869-Cellosaurus-RIN",
@@ -212,7 +212,7 @@ A JSON array of JSON objects, one per source
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -222,13 +222,11 @@ A JSON array of JSON objects, one per source
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 
