@@ -4,7 +4,7 @@ description: Describes the APIs for checking the source's status
 
 # Foundry API: Status Information
 
-{% api-method method="get" host="https://foundry-dev.scicrunch.io/foundry/api/dashboard/status" path="" %}
+{% api-method method="get" host="https://foundry-dev.scicrunch.io" path="/foundry/api/dashboard/status" %}
 {% api-method-summary %}
 dashboard/status
 {% endapi-method-summary %}
