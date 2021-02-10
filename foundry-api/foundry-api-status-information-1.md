@@ -104,7 +104,7 @@ Source to be ingested
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://foundry-dev.scicrunch.io/foundry/api/dashboard/status/all " path="" %}
+{% api-method method="get" host="https://foundry-dev.scicrunch.io " path="/foundry/api/dashboard/status/all" %}
 {% api-method-summary %}
 dashboard/status/all
 {% endapi-method-summary %}
