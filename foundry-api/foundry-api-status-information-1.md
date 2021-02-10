@@ -66,9 +66,6 @@ Source to be ingested
 
 {% endapi-method-response-example-description %}
 
-```text
-
-```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=403 %}
@@ -76,9 +73,6 @@ Source to be ingested
 
 {% endapi-method-response-example-description %}
 
-```text
-
-```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -86,9 +80,6 @@ Source to be ingested
 
 {% endapi-method-response-example-description %}
 
-```text
-
-```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -96,9 +87,6 @@ Source to be ingested
 
 {% endapi-method-response-example-description %}
 
-```text
-
-```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -212,9 +200,7 @@ A JSON array of JSON objects, one per source
 
 {% endapi-method-response-example-description %}
 
-```text
 
-```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -222,9 +208,6 @@ A JSON array of JSON objects, one per source
 
 {% endapi-method-response-example-description %}
 
-```text
-
-```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
