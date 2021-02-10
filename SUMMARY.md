@@ -50,6 +50,7 @@
 
 * [Foundry API Overview](foundry-api/foundry-api-overview.md)
 * [Foundry API: Status Information](foundry-api/foundry-api-status-information.md)
+* [Foundry API: Status Information](foundry-api/foundry-api-status-information-1.md)
 * [Foundry API: Source Information](foundry-api/foundry-api-source-information.md)
 * [Foundry API: Source Ingestion](foundry-api/foundry-api-source-ingestion.md)
 * [Foundry API: Run a Source](foundry-api/foundry-api-run-a-source.md)

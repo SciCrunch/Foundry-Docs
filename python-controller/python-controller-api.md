@@ -15,8 +15,8 @@ This endpoint allows you to start the ingest process for a foundry resource.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="-user" type="integer" required=false %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="-user" type="number" required=false %}
 User ID \(default = 4\)
 {% endapi-method-parameter %}
 
@@ -28,32 +28,30 @@ Allowed duplicate percentage \(default = None\)
 Allowed error percentage \(default = None\)
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="-f" type="boolean" required=false %}
+Force ingest, irrespective of prior error state \(default = False\)
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="-requestType" type="string" required=false %}
-Specify the type of workflow {**update,index,ingest,run**} \(default = update\)
+Specify the type of workflow {update, ingest, index, run, reprocess} \(default=update\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="-sourceType" type="string" required=false %}
-Specify the type of the source, {**rin,literature,mentions,ks**} \(default = rin\)
+Specify the type of the source, {rin, literature, mentions, ks} \(default = rin\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="-skipCheck" type="boolean" required=false %}
-Skip accounting check \(default = True\)
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="-f" type="boolean" required=false %}
-Force ingest \(default = False\)
+Skip Accounting check
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="resourceID" type="string" required=true %}
-Source ID to be ingested
+Source to be ingested
 {% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
-{% api-method-headers %}
 {% api-method-parameter name="api\_key" type="string" required=true %}
-Authentication token 
+Authentication Token
 {% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -95,17 +93,15 @@ Allows you to check the status of the ingest of a specific resource
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="resourceID" type="string" required=true %}
-Source ID 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
-{% api-method-headers %}
+{% api-method-query-parameters %}
 {% api-method-parameter name="api\_key" type="string" required=true %}
-Authentication token
+Authentication Token
 {% endapi-method-parameter %}
-{% endapi-method-headers %}
+
+{% api-method-parameter name="resourceID" type="string" required=true %}
+Source ID
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
