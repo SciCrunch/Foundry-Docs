@@ -62,9 +62,6 @@ Source to be ingested
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
 
 {% endapi-method-response-example %}
 
