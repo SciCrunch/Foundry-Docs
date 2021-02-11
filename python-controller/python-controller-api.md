@@ -4,7 +4,7 @@ description: Describes the Controller APIs used by Foundry Dashboard to start th
 
 # Python Controller API
 
-{% api-method method="post" host="http" path="://foundry.controller.io:5000/ingest" %}
+{% api-method method="post" host="http://python.scicrunch.io:5000" path="/ingest" %}
 {% api-method-summary %}
 ingest
 {% endapi-method-summary %}
@@ -82,7 +82,7 @@ Missing / Invalid resourceID
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://foundry.controller.io:5000/ingest" path="\_status" %}
+{% api-method method="get" host="http://python.scicrunch.io:5000" path="/ingest\_status" %}
 {% api-method-summary %}
 ingest\_status
 {% endapi-method-summary %}
