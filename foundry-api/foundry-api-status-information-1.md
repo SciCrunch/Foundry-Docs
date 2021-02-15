@@ -62,7 +62,13 @@ Source to be ingested
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
 
+{% endapi-method-response-example-description %}
+
+```
+
+```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=403 %}
@@ -70,6 +76,9 @@ Source to be ingested
 
 {% endapi-method-response-example-description %}
 
+```
+
+```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -77,6 +86,9 @@ Source to be ingested
 
 {% endapi-method-response-example-description %}
 
+```
+
+```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -84,12 +96,15 @@ Source to be ingested
 
 {% endapi-method-response-example-description %}
 
+```
+
+```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://foundry-dev.scicrunch.io " path="/foundry/api/dashboard/status/all" %}
+{% api-method method="get" host="https://foundry-dev.scicrunch.io" path="/foundry/api/dashboard/status/all" %}
 {% api-method-summary %}
 dashboard/status/all
 {% endapi-method-summary %}
@@ -197,7 +212,9 @@ A JSON array of JSON objects, one per source
 
 {% endapi-method-response-example-description %}
 
+```
 
+```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -205,6 +222,9 @@ A JSON array of JSON objects, one per source
 
 {% endapi-method-response-example-description %}
 
+```
+
+```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}

@@ -4,7 +4,7 @@ description: Describes the Controller APIs used by Foundry Dashboard to start th
 
 # Python Controller API
 
-{% api-method method="post" host="http://python.scicrunch.io:5000" path="/ingest" %}
+{% api-method method="post" host="http" path="://python.scicrunch.io:5000/ingest" %}
 {% api-method-summary %}
 ingest
 {% endapi-method-summary %}
@@ -110,7 +110,7 @@ Source ID
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "status": "<Running | Finished | No ongoing ingest>"
 }
