@@ -1,4 +1,4 @@
-# Foundry API: Source Information
+# Foundry API: Source Information \(old\)
 
 ### `GET sources`
 
