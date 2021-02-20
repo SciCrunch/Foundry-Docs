@@ -1,4 +1,4 @@
-# Foundry API: Indexing
+# Foundry API: Indexing \(old\)
 
 ### `POST dashboard/index`
 

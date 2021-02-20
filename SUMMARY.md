@@ -57,7 +57,8 @@
 * [Foundry API: Source Ingestion](foundry-api/foundry-api-source-ingestion-1.md)
 * [Foundry API: Run a Source \(old\)](foundry-api/foundry-api-run-a-source.md)
 * [Foundry API: Run a Source](foundry-api/foundry-api-run-a-source-1.md)
-* [Foundry API: Indexing](foundry-api/foundry-api-indexing.md)
+* [Foundry API: Indexing \(old\)](foundry-api/foundry-api-indexing.md)
+* [Foundry API: Indexing](foundry-api/foundry-api-indexing-1.md)
 * [Foundry API: Reset a Source](foundry-api/foundry-api-reset-a-source.md)
 * [Foundry API: Document Information](foundry-api/original-wiki-content.md)
 
