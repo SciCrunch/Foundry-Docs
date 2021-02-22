@@ -1,4 +1,4 @@
-# Foundry API: Document Information
+# Foundry API: Document Information \(old\)
 
 ### `GET dashboard/document`
 

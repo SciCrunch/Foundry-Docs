@@ -59,8 +59,10 @@
 * [Foundry API: Run a Source](foundry-api/foundry-api-run-a-source-1.md)
 * [Foundry API: Indexing \(old\)](foundry-api/foundry-api-indexing.md)
 * [Foundry API: Indexing](foundry-api/foundry-api-indexing-1.md)
-* [Foundry API: Reset a Source](foundry-api/foundry-api-reset-a-source.md)
-* [Foundry API: Document Information](foundry-api/original-wiki-content.md)
+* [Foundry API: Reset a Source \(old\)](foundry-api/foundry-api-reset-a-source.md)
+* [Foundry API: Reset a Source](foundry-api/foundry-api-reset-a-source-1.md)
+* [Foundry API: Document Information \(old\)](foundry-api/original-wiki-content.md)
+* [Foundry API: Document Information](foundry-api/foundry-api-document-information.md)
 
 ## Python Controller
 

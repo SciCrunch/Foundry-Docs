@@ -1,4 +1,4 @@
-# Foundry API: Reset a Source
+# Foundry API: Reset a Source \(old\)
 
 ### `POST dashboard/reset`
 
