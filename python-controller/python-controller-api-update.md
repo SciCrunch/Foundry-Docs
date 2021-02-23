@@ -5,19 +5,31 @@ description: >-
 ---
 
 # Python Controller API - Update
+
 {% api-method method="post" host="http://python.scicrunch.io:5000/" path="update" %}
 {% api-method-summary %}
 update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint runs Update for the specified resource. Update is an integrated
-  workflow of ingest and run.
+This endpoint runs Update for the specified resource. Update is an integrated workflow of ingest and run.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
+{% api-method-parameter name="jsonPath" type="string" required=false %}
+Specify the json field to be used as docID
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="crawlOffset" type="integer" required=false %}
+\[1....30\] Applies the date filter. Index documnets from past 'n' days.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="indexName" type="string" required=true %}
+Name of the index in Elastic Search \(Controller takes care of alias mapping\)
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="-user" type="number" required=false %}
 User ID \(default = 4\)
 {% endapi-method-parameter %}
@@ -62,7 +74,7 @@ Authentication Token
 Process request started
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "message": "Your Request started"
 }
@@ -71,10 +83,10 @@ Process request started
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-Missing / Invalid resourceID 
+Missing / Invalid resourceID
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "message": "<Invalid Resource | Specify ResourceID>"
 }
@@ -86,17 +98,17 @@ Missing / Invalid resourceID
 Unauthorized Request
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'message' : 'Unauthorized access'}
 ```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=403 %}
 {% api-method-response-example-description %}
-User does not have access privileges 
+User does not have access privileges
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'message' : 'Access Denied'}
 ```
 {% endapi-method-response-example %}
@@ -104,13 +116,13 @@ User does not have access privileges
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://python.scicrunch.io:5000" path="/ingest\_status" %}
+{% api-method method="get" host="http://python.scicrunch.io:5000" path="/update\_status" %}
 {% api-method-summary %}
-ingest\_status
+update\_status
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Allows you to check the status of the ingest of a specific resource
+Allows you to check the status of the update of a specific resource
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -134,7 +146,7 @@ Source ID
 
 ```text
 {
-    "status": "<Running | Finished | No ongoing ingest>"
+    "status": "<Running | Finished | No ongoing update>"
 }
 ```
 {% endapi-method-response-example %}
@@ -144,7 +156,7 @@ Source ID
 Missing / Invalid Resource ID
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "message": "<Invalid Resource | Specify ResourceID>"
 }
@@ -156,7 +168,7 @@ Missing / Invalid Resource ID
 Unauthorized request
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'message' : 'Unauthorized access'}
 ```
 {% endapi-method-response-example %}
@@ -166,10 +178,11 @@ Unauthorized request
 User does not have access privileges
 {% endapi-method-response-example-description %}
 
-```
+```text
 {'message' : 'Access Denied'}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
