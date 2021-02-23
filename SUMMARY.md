@@ -68,7 +68,11 @@
 
 * [Foundry-ES Management \(Overview\)](python-controller/foundry-es-management-overview.md)
 * [Python Controller](python-controller/python-controller.md)
-* [Python Controller API](python-controller/python-controller-api.md)
+* [Python Controller APIs Overview](python-controller/python-controller-apis-overview.md)
+* [Python Controller API - Ingest](python-controller/python-controller-api.md)
+* [Python Controller API - Update](python-controller/python-controller-api-update.md)
+* [Python Controller API - Index](python-controller/python-controller-api-index.md)
+* [Python Controller API - run](python-controller/python-controller-api-run.md)
 * [Developer Guide](python-controller/developer-guide.md)
 
 ## Foundry Dashboard

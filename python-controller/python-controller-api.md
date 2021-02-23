@@ -2,9 +2,9 @@
 description: Describes the Controller APIs used by Foundry Dashboard to start the processes
 ---
 
-# Python Controller API
+# Python Controller API - Ingest
 
-{% api-method method="post" host="http" path="://python.scicrunch.io:5000/ingest" %}
+{% api-method method="post" host="http://python.scicrunch.io:5000/" path="ingest" %}
 {% api-method-summary %}
 ingest
 {% endapi-method-summary %}
@@ -78,6 +78,26 @@ Missing / Invalid resourceID
 }
 ```
 {% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=401 %}
+{% api-method-response-example-description %}
+Unauthorized Request
+{% endapi-method-response-example-description %}
+
+```
+{'message' : 'Unauthorized access'}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=403 %}
+{% api-method-response-example-description %}
+User does not have access privileges 
+{% endapi-method-response-example-description %}
+
+```
+{'message' : 'Access Denied'}
+```
+{% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
@@ -114,6 +134,38 @@ Source ID
 {
     "status": "<Running | Finished | No ongoing ingest>"
 }
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+Missing / Invalid Resource ID
+{% endapi-method-response-example-description %}
+
+```
+{
+    "message": "<Invalid Resource | Specify ResourceID>"
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=401 %}
+{% api-method-response-example-description %}
+Unauthorized request
+{% endapi-method-response-example-description %}
+
+```
+{'message' : 'Unauthorized access'}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=403 %}
+{% api-method-response-example-description %}
+User does not have access privileges
+{% endapi-method-response-example-description %}
+
+```
+{'message' : 'Access Denied'}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
