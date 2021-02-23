@@ -118,7 +118,7 @@ update\_status
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Allows you to check the status of the update of a specific resource
+Allows you to check the status of an ongoing update of a specific resource
 {% endapi-method-description %}
 
 {% api-method-spec %}

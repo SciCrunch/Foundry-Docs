@@ -1,7 +1,3 @@
----
-description: Describes the Controller APIs used by Foundry Dashboard to start the processes
----
-
 # Python Controller API - Ingest
 
 {% api-method method="post" host="http://python.scicrunch.io:5000/" path="ingest" %}
@@ -10,7 +6,7 @@ ingest
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to start the ingest process for a foundry resource.
+This endpoint allows you to start the ingest workflow for specified resource in Foundry.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -104,7 +100,7 @@ ingest\_status
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Allows you to check the status of the ingest of a specific resource
+Allows you to check the status of an ongoing ingest of a specific resource
 {% endapi-method-description %}
 
 {% api-method-spec %}
