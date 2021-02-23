@@ -32,10 +32,6 @@ Allowed error percentage \(default = None\)
 Force ingest, irrespective of prior error state \(default = False\)
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="-requestType" type="string" required=false %}
-Specify the type of workflow {update, ingest, index, run, reprocess} \(default=update\)
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="-sourceType" type="string" required=false %}
 Specify the type of the source, {rin, literature, mentions, ks} \(default = rin\)
 {% endapi-method-parameter %}

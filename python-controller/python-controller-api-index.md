@@ -3,13 +3,14 @@ description: This endpoint creates an index in Elastic Search.
 ---
 
 # Python Controller API - Index
+
 {% api-method method="post" host="http://python.scicrunch.io:5000/" path="index" %}
 {% api-method-summary %}
 index
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint creates an index in Elastic Search. 
+This endpoint creates an index in Elastic Search.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -29,10 +30,6 @@ Name of the index in Elastic Search \(Controller takes care of alias mapping\)
 
 {% api-method-parameter name="-user" type="number" required=false %}
 User ID \(default = 4\)
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="-requestType" type="string" required=false %}
-Specify the type of workflow {update, ingest, index, run, reprocess} \(default=update\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="-sourceType" type="string" required=false %}
