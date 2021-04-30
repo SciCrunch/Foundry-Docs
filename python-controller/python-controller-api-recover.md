@@ -12,7 +12,7 @@ To be used to recover the system from SYSTEM\_QUEUE\_FAILURE, SYSTEM\_ERROR or N
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
-{% api-method-parameter name="Authentication" type="string" required=true %}
+{% api-method-parameter name="api\_key" type="string" required=true %}
 Authentication token to track down who is emptying our stocks.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
