@@ -1,6 +1,6 @@
 # Python Controller API - Recover
 
-{% api-method method="get" host="http://python.scicrunch.io:5000/controller/" path="recover" %}
+{% api-method method="post" host="http://python.scicrunch.io:5000/controller/" path="recover" %}
 {% api-method-summary %}
 recover
 {% endapi-method-summary %}
