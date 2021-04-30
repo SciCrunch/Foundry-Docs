@@ -22,8 +22,8 @@ ID of the source to be put on hold
 {% endapi-method-path-parameters %}
 
 {% api-method-headers %}
-{% api-method-parameter name="Authentication" type="string" required=true %}
-Authentication token to track down who is emptying our stocks.
+{% api-method-parameter name="api\_key" type="string" required=true %}
+Authentication token 
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
