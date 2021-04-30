@@ -6,13 +6,13 @@ description: >-
 
 # Python Controller API - Update
 
-{% api-method method="post" host="http://python.scicrunch.io:5000/" path="update" %}
+{% api-method method="post" host="http://python.scicrunch.io:5000/controller/" path="update" %}
 {% api-method-summary %}
 update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint runs Update for the specified resource. Update is an integrated workflow of ingest and run.
+This endpoint runs Update for the specified resource. Update is an integrated workflow of ingest and index.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -30,7 +30,7 @@ Specify the json field to be used as docID
 Name of the index in Elastic Search \(Controller takes care of alias mapping\)
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="-user" type="number" required=false %}
+{% api-method-parameter name="userID" type="number" required=false %}
 User ID \(default = 4\)
 {% endapi-method-parameter %}
 
@@ -112,7 +112,7 @@ User does not have access privileges
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://python.scicrunch.io:5000" path="/update\_status" %}
+{% api-method method="get" host="http://python.scicrunch.io:5000/controller/" path="update\_status" %}
 {% api-method-summary %}
 update\_status
 {% endapi-method-summary %}

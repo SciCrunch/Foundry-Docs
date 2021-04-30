@@ -1,23 +1,27 @@
-# Python Controller API - Run
+# Python Controller API - Reprocess
 
-{% api-method method="get" host="http://python.scicrunch.io:5000/controller/" path="run" %}
+{% api-method method="get" host="http://python.scicrunch.io:5000/controller/" path="reprocess" %}
 {% api-method-summary %}
-run
+reprocess
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to run the source for errors.
+This endpoint allows you to reprocess all the documents from the finished state.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="userID" type="integer" required=false %}
-If not provided default \(4- auto-run\) will be used 
+Default auto\_run \(4\)
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="index\_name" type="string" required=true %}
+Name of the index \(all lowercase\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="resourceID" type="string" required=true %}
-Source ID to be run for errors
+Source ID to be reprocessed
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -31,47 +35,43 @@ Authentication token
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Cake successfully retrieved.
+
 {% endapi-method-response-example-description %}
 
 ```
-{    "name": "Cake's name",    "recipe": "Cake's recipe name",    "cake": "Binary cake"}
+
 ```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
 {% api-method-response-example-description %}
-Could not find a cake matching this query.
+
 {% endapi-method-response-example-description %}
 
 ```
-{    "message": "Ain't no cake like that."}
+
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://python.scicrunch.io:5000/controller/" path="run\_status" %}
+{% api-method method="post" host="http://python.scicrunch.io:5000/controller/" path="reprocess\_status" %}
 {% api-method-summary %}
-run\_status
+reprocess\_status
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint will check the status of the ongoing run process
+This endpoint will check the status of the reprocess workflow 
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="userID" type="integer" required=false %}
-Default auto\_run \(4\)
-{% endapi-method-parameter %}
-
+{% api-method-query-parameters %}
 {% api-method-parameter name="resourceID" type="string" required=true %}
-Source ID 
+Source to be ingested
 {% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -87,4 +87,6 @@ Source ID
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+
 

@@ -1,6 +1,6 @@
 # Python Controller API - Ingest
 
-{% api-method method="post" host="http://python.scicrunch.io:5000/" path="ingest" %}
+{% api-method method="post" host="http://python.scicrunch.io:5000/controller/" path="ingest" %}
 {% api-method-summary %}
 ingest
 {% endapi-method-summary %}
@@ -12,7 +12,7 @@ This endpoint allows you to start the ingest workflow for specified resource in 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
-{% api-method-parameter name="-user" type="number" required=false %}
+{% api-method-parameter name="userID" type="number" required=false %}
 User ID \(default = 4\)
 {% endapi-method-parameter %}
 
@@ -94,7 +94,7 @@ User does not have access privileges
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://python.scicrunch.io:5000" path="/ingest\_status" %}
+{% api-method method="get" host="http://python.scicrunch.io:5000/controller/" path="ingest\_status" %}
 {% api-method-summary %}
 ingest\_status
 {% endapi-method-summary %}

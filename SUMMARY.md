@@ -72,6 +72,11 @@
 * [Python Controller API - Ingest](python-controller/python-controller-api.md)
 * [Python Controller API - Update](python-controller/python-controller-api-update.md)
 * [Python Controller API - Index](python-controller/python-controller-api-index.md)
+* [Python Controller API - Run](python-controller/python-controller-api-run.md)
+* [Python Controller API - Reprocess](python-controller/python-controller-api-reprocess.md)
+* [Python Controller API - Hold](python-controller/python-controller-api-hold.md)
+* [Python Controller API - Clear Resource](python-controller/python-controller-api-clear-resource.md)
+* [Python Controller API - Recover](python-controller/python-controller-api-recover.md)
 * [Developer Guide](python-controller/developer-guide.md)
 
 ## Foundry Dashboard
