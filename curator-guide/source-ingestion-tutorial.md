@@ -29,9 +29,7 @@ CDC's Division of Population Health provides cross-cutting set of 124 indicators
 1. In the SourceDescriptors directory create a new file for the specific source data to be ingested and transformed.  
 2. Please follow the file naming convention:  
 
-   \`\`\`
-
-   {Source ID}-{Source Resource Name}-{Resource Transformation}.yml
+   `{Source ID}-{Source Resource Name}-{Resource Transformation}.yml`
 
 SourceDescriptors/SCR\_004712-CDC-CDIsmall.yml
 
