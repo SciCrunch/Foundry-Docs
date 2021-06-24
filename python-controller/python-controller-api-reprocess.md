@@ -1,6 +1,6 @@
 # Python Controller API - Reprocess
 
-{% api-method method="get" host="http://python.scicrunch.io:5000/controller/" path="reprocess" %}
+{% api-method method="get" host="https://python.scicrunch.io/controller/" path="reprocess" %}
 {% api-method-summary %}
 reprocess
 {% endapi-method-summary %}
@@ -56,7 +56,7 @@ Authentication token
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="http://python.scicrunch.io:5000/controller/" path="reprocess\_status" %}
+{% api-method method="post" host="https://python.scicrunch.io/controller/" path="reprocess\_status" %}
 {% api-method-summary %}
 reprocess\_status
 {% endapi-method-summary %}

@@ -4,7 +4,7 @@ description: This endpoint creates an index in Elastic Search.
 
 # Python Controller API - Index
 
-{% api-method method="post" host="http://python.scicrunch.io:5000/controller/" path="index" %}
+{% api-method method="post" host="https://python.scicrunch.io/controller/" path="index" %}
 {% api-method-summary %}
 index
 {% endapi-method-summary %}
@@ -94,7 +94,7 @@ User does not have access privileges
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://python.scicrunch.io:5000/controller/" path="index\_status" %}
+{% api-method method="get" host="https://python.scicrunch.io/controller/" path="index\_status" %}
 {% api-method-summary %}
 index\_status
 {% endapi-method-summary %}

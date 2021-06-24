@@ -1,6 +1,6 @@
 # Python Controller API - Clear Resource
 
-{% api-method method="post" host="http://python.scicrunch.io:5000/controller/" path="clear\_source" %}
+{% api-method method="post" host="https://python.scicrunch.io/controller/" path="clear\_source" %}
 {% api-method-summary %}
 clear\_source
 {% endapi-method-summary %}

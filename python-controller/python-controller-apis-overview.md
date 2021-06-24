@@ -6,5 +6,7 @@ description: >-
 
 # Python Controller APIs Overview
 
-Base URL : http://python.scicrunch.io:5000/controller/
+Base URL \(For production\): https://python.scicrunch.io/controller/
+
+Base URL \(For development\): https://python-dev.scicrunch.io/controller/
 

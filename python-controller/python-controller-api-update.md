@@ -6,7 +6,7 @@ description: >-
 
 # Python Controller API - Update
 
-{% api-method method="post" host="http://python.scicrunch.io:5000/controller/" path="update" %}
+{% api-method method="post" host="https://python.scicrunch.io/controller/" path="update" %}
 {% api-method-summary %}
 update
 {% endapi-method-summary %}
@@ -112,7 +112,7 @@ User does not have access privileges
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://python.scicrunch.io:5000/controller/" path="update\_status" %}
+{% api-method method="get" host="https://python.scicrunch.io/controller/" path="update\_status" %}
 {% api-method-summary %}
 update\_status
 {% endapi-method-summary %}

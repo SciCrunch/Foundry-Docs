@@ -1,6 +1,6 @@
 # Python Controller API - Hold
 
-{% api-method method="post" host="http://python.scicrunch.io:5000/controller/" path="hold\_source" %}
+{% api-method method="post" host="https://python.scicrunch.io/controller/" path="hold\_source" %}
 {% api-method-summary %}
 hold\_source
 {% endapi-method-summary %}
