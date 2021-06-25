@@ -20,6 +20,8 @@ If a match is found within the term\_mappings table and the column `curation_sta
 
 ![Updates records with information found in term\_mappings / Interlex](../.gitbook/assets/semantic-enhancer-workflow.png)
 
+![Semantic Enhancer Workflow \(More Granular\)](../.gitbook/assets/semantic-enhancer-workflow-1-.png)
+
 ### **Enhancement Example:**
 
 The following provides a case where a record has the `name` field but not a `curie`. It finds the `curie` in the term\_mappings table and inserts it and additional information into the record. In this particular case, it replaces the `name` with the preferred label found in Interlex ES.

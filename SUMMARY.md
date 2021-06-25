@@ -44,7 +44,7 @@
 * [Semantic Enhancer](foundry-enhancers/semantic-enhancer.md)
 * [Relation Enhancer](foundry-enhancers/relation-enhancer.md)
 * [Resource Validator](foundry-enhancers/resource-validator.md)
-* [Validation Enhancer](foundry-enhancers/validation-enhancer.md)
+* [Quality Control](foundry-enhancers/quality-control.md)
 
 ## Foundry API
 
