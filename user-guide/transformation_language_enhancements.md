@@ -41,11 +41,11 @@ transform column distinct "$.'tags'[*].'value'" to "ns.values[]";
 
 ## Preprocessing of source JSON records before transformation
 
-To enforce symmetry in the source JSON documents to be tranformed, a new statement is introduced to inform whether or not normalization needs to be applied before transformation. Currently, the normalization only includes adding missing string valued fields to the arrays of JSON objects in the source data to ensure that if two or more set of fields are matched for a `transform column(s)` or `join` statement, corresponding fields from each JSON object in the list align. An example usage is shown below;
+To enforce symmetry in the source JSON documents to be tranformed, a new statement is introduced to inform whether or not normalization needs to be applied before transformation. Currently, the normalization only includes adding missing string valued fields to the arrays of JSON objects in the source data to ensure that if two or more set of fields are matched for a `transform columns` or `join` statement, corresponding fields from each JSON object in the list align. An example usage is shown below;
 
 ```text
 set "normalize" on;
-transform distinct "$.'tags'[*].'value'" to "ns.values[]";
+transform columns "$.'tags'[*].'name'","$.'tags'[*].'value'" to "ns.values[]" apply {{ result=value1 + ':' + value2 }};
 ```
 
 
@@ -66,4 +66,15 @@ transform distinct "$.'tags'[*].'value'" to "ns.values[]";
   ]
 }
 
+```
+**Resulting document**
+
+```text
+{"ns": {"values": [
+  "name1:a",
+  "name2:b",
+  "name3:",
+  "name4:c",
+  "name5:d"
+]}}
 ```
