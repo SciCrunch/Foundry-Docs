@@ -40,8 +40,8 @@
 
 ## Foundry Enhancers
 
-* [Resource Enhancer](foundry-enhancers/resource-enhancer.md)
 * [Semantic Enhancer](foundry-enhancers/semantic-enhancer.md)
+* [Resource Enhancer](foundry-enhancers/resource-enhancer.md)
 * [Relation Enhancer](foundry-enhancers/relation-enhancer.md)
 * [Resource Validator](foundry-enhancers/resource-validator.md)
 * [Quality Control](foundry-enhancers/quality-control.md)

@@ -1,7 +1,5 @@
 # Resource Enhancer
 
-## Resource Enhancer
-
 **Full Path:**  
 `Foundry-ES/consumers/src/main/java/org/neuinfo/foundry/consumers/jms/consumers/plugins/scicrunch/ResourceEnhancer.java`
 
