@@ -11,3 +11,4 @@ This allows ingesting records from an [Open Archives Initiative](https://www.ope
 * **sleepTimeSecs** - \[double\] (default 1 sec) wait time between batch record requests within record set to not overwhelm the OAI-PMH server.
 * **sampleMode** - \["false", "true"\] Default is "false". If set to true only up to `sampleSize` data records will be ingested.
 * **sampleSize** - \[int\] The number of data records that will be ingested if `sampleMode: "true"`
+* **useCache** - \["false", "true"\] If true uses previously retrieved data for ingestion.
