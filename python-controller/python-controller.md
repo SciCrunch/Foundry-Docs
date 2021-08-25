@@ -54,6 +54,14 @@ Controller can be executed with following positional and optional parameters.
   -duplPerc DUPLPERC    Specify the allowed percentage of duplicates (applicable for some resources)
 ```
 
+## Request Type \(-requestType\)
+
+Controller supports multiple request types. The default request type is update, which runs update workflow. To run any other request, it needs to be explicitly specify with this parameter.                                  `eg. -requestType=index` will run index workflow. 
+
+## Source Type \(-sourceType\)
+
+There are multiple source types. The default source type is rin. To ingest any other type of source, it needs to be explicitly specify with this parameter. `eg. -sourceType=literature` . If the source type is mismatched, controller will not complain. But will end up in indexing the resource under wrong source type. 
+
 ## Force Update \(-f\)
 
 Controller will skip the prior error check for the source
