@@ -47,3 +47,6 @@ SCR_013869-Cellosaurus-RIN:
 
 ```
 
+Foundry parses the rules and caches them ready to be used inside an enhancers code. Below is an example usage:
+
+
