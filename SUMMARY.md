@@ -27,6 +27,7 @@
 * [CSV Ingestor](user-guide/csv_ingestor_config.md)
 * [Database Ingestor](user-guide/db_ingestor_cfg.md)
 * [FTP Ingestor](user-guide/ftp_ingestor_cfg.md)
+* [OAI-PMH Ingestor](user-guide/oai-pmh-ingestor.md)
 * [Web Ingestor](user-guide/web_ingestor_cfg.md)
 
 ## Foundry Developer Guide <a id="developer-guide"></a>
