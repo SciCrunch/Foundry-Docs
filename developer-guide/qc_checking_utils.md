@@ -50,3 +50,27 @@ SCR_013869-Cellosaurus-RIN:
 Foundry parses the rules and caches them ready to be used inside an enhancers code. Below is an example usage:
 
 
+```java
+    @Override
+    public Result handle(Document docWrapper) {
+        try {
+             Document data = (Document) docWrapper.get("Data");
+             Document siDBO = (Document) docWrapper.get("SourceInfo");
+             String srcId = siDBO.getString("SourceID");
+             Document trDBO = (Document) data.get("transformedRec");
+             JSONObject transformedJson = JSONUtils.toJSON(trDBO, false);
+             
+             QCRuleParserRegistry  qcRegistry = QCRuleParserRegistry.getInstance();
+             QCRuleParser qcRuleParser = qcRegistry.getQCRuleParser(srcId);
+             if (qcRuleParser != null) {
+                 QCResult result = qcRuleParser.checkDocument(transformedJson);
+                 if (result.getResult() == QCResult.Status.OK) {
+                    // TODO
+                 } else {
+                    List<String> errors = result.getErrorMessages();
+                    //TODO 
+                 }
+             }
+             ...
+        }
+```
