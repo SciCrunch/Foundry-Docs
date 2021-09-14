@@ -1,19 +1,19 @@
-# Python Controller API - Recover
+# Python Controller API - Reboot
 
-{% api-method method="post" host="https://python.scicrunch.io/controller/" path="recover" %}
+{% api-method method="get" host="https://python.scicrunch.io/controller/" path="reboot" %}
 {% api-method-summary %}
-recover
+reboot
 {% endapi-method-summary %}
 
 {% api-method-description %}
-To be used to recover the system from SYSTEM\_QUEUE\_FAILURE, SYSTEM\_ERROR or NETWORK\_FAILURE. It will change the the system status to RECOVERED. This api should be made by admin only.
+This api will reboot the Primary Consumer on AWS. This is required whenever an update is pushed to Foundry.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="api\_key" type="string" required=true %}
-Authentication token 
+Authentication Token
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -31,6 +31,4 @@ Authentication token
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 

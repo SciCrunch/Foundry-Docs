@@ -78,6 +78,8 @@
 * [Python Controller API - Hold](python-controller/python-controller-api-hold.md)
 * [Python Controller API - Clear Resource](python-controller/python-controller-api-clear-resource.md)
 * [Python Controller API - Recover](python-controller/python-controller-api-recover.md)
+* [Python Controller API - Reset](python-controller/python-controller-api-reset.md)
+* [Python Controller API - Reboot](python-controller/python-controller-api-reboot.md)
 * [Developer Guide](python-controller/developer-guide.md)
 
 ## Foundry Dashboard

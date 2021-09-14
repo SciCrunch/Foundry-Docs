@@ -1,21 +1,27 @@
-# Python Controller API - Recover
+# Python Controller API - Reset
 
-{% api-method method="post" host="https://python.scicrunch.io/controller/" path="recover" %}
+{% api-method method="post" host="https://python.scicrunch.io/controller/" path="reset" %}
 {% api-method-summary %}
-recover
+reset
 {% endapi-method-summary %}
 
 {% api-method-description %}
-To be used to recover the system from SYSTEM\_QUEUE\_FAILURE, SYSTEM\_ERROR or NETWORK\_FAILURE. It will change the the system status to RECOVERED. This api should be made by admin only.
+This api call will reset the specified resource in the foundry. It takes minimum 2mins to maximum of 25mins to reset the resource. It depends on the size of the resource.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="api\_key" type="string" required=true %}
-Authentication token 
+Authentication Token
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="resourceID" type="string" required=true %}
+Source ID to be reset
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -31,6 +37,4 @@ Authentication token
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 
