@@ -6,7 +6,7 @@ hold\_source
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to put resource on HOLD
+This endpoint allows you to put resource on HOLD. Each API call will be recorded and pushed to the process\_request table of the database.
 {% endapi-method-description %}
 
 {% api-method-spec %}
