@@ -1,12 +1,12 @@
-# Python Controller API - Reset
+# Python Controller API - Inactivate\_source
 
-{% api-method method="post" host="https://python.scicrunch.io/controller/" path="reset" %}
+{% api-method method="post" host="https://python.scicrunch.io/controller/" path="inactivate\_source" %}
 {% api-method-summary %}
-reset
+inactivate\_source
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This api call will reset the specified resource in the foundry. It takes minimum 2mins to maximum of 25mins to reset the resource. It depends on the size of the resource.
+This is an admin level API. If a source is in STUCK condition and not crawled since long time \(currently there are not rules set to check\), admin can decide to flag this source as INACTIVE. It is an independent API, that means using this api any source can be flagged as INACTIVE. Each call will be recorded and pushed to process\_request table in the database.
 {% endapi-method-description %}
 
 {% api-method-spec %}

@@ -77,8 +77,9 @@
 * [Python Controller API - Reprocess](python-controller/python-controller-api-reprocess.md)
 * [Python Controller API - Hold](python-controller/python-controller-api-hold.md)
 * [Python Controller API - Clear Resource](python-controller/python-controller-api-clear-resource.md)
+* [Python Controller API - Reset resource](python-controller/python-controller-api-reset-resource.md)
 * [Python Controller API - Recover](python-controller/python-controller-api-recover.md)
-* [Python Controller API - Reset](python-controller/python-controller-api-reset.md)
+* [Python Controller API - Inactivate\_source](python-controller/python-controller-api-reset.md)
 * [Python Controller API - Reboot](python-controller/python-controller-api-reboot.md)
 * [Developer Guide](python-controller/developer-guide.md)
 
