@@ -6,7 +6,7 @@ reboot
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This api will reboot the Primary Consumer on AWS. This is required whenever an update is pushed to Foundry.
+This api will reboot the Primary Consumer on AWS. This is required whenever an update is pushed to Foundry. This is an independent request, it is not recorded in the process\_request table of Foundry database
 {% endapi-method-description %}
 
 {% api-method-spec %}

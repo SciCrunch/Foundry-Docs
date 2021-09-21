@@ -6,7 +6,7 @@ reset
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This API should be run in one of the following conditions : If the source seems stuck while ingesting. OR when Foundry source\_status api shows error message "**Cannot start ingesting: Source '&lt;source name&gt;' is already ingesting/processing!"**. This is admin level API and it's execution is decided by the admin. It takes minimum of 2mins to maximum of 25mins to reset the source in the Foundry
+This API should be run in one of the following conditions : If the source seems stuck while ingesting. OR when Foundry source\_status api shows error message "**Cannot start ingesting: Source '&lt;source name&gt;' is already ingesting/processing!"**. This is admin level API and execution is decided by the admin. It takes minimum of 2mins to maximum of 25mins to reset the source in the Foundry. This is an independent request, it is not recorded in the process\_request table of Foundry database.
 {% endapi-method-description %}
 
 {% api-method-spec %}
