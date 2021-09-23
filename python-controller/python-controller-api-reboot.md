@@ -1,6 +1,6 @@
 # Python Controller API - Reboot
 
-{% api-method method="get" host="https://python.scicrunch.io/controller/" path="reboot" %}
+{% api-method method="post" host="https://python.scicrunch.io/controller/" path="reboot" %}
 {% api-method-summary %}
 reboot
 {% endapi-method-summary %}

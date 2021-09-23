@@ -6,7 +6,11 @@ inactivate\_source
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This is an admin level API. If a source is in STUCK condition and not crawled since long time \(currently there are not rules set to check\), admin can decide to flag this source as INACTIVE. It is an independent API, that means using this api any source can be flagged as INACTIVE. Each call will be recorded and pushed to process\_request table in the database.
+**This is an admin level API.**   
+  
+If a source is in **STUCK** condition and not crawled since long time \(currently there are not rules set to check\), admin can decide to flag this source as **INACTIVE**.   
+  
+**Note:** It is an independent API, that means using this api any source can be flagged as **INACTIVE**. Each call will be recorded and pushed to process\_request table in the database.
 {% endapi-method-description %}
 
 {% api-method-spec %}

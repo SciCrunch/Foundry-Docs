@@ -6,7 +6,9 @@ recover
 {% endapi-method-summary %}
 
 {% api-method-description %}
-To be used to recover the system from SYSTEM\_QUEUE\_FAILURE, SYSTEM\_ERROR or NETWORK\_FAILURE. It will change the the system status to RECOVERED. This api should be made by admin only.
+**This is an admin level API.**   
+  
+To be used to recover the system from **SYSTEM\_QUEUE\_FAILURE**, **SYSTEM\_ERROR** or **NETWORK\_FAILURE**. It will change the the system status to **RECOVERED**. 
 {% endapi-method-description %}
 
 {% api-method-spec %}
