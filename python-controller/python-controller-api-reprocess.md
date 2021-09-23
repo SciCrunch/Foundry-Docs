@@ -1,6 +1,6 @@
 # Python Controller API - Reprocess
 
-{% api-method method="get" host="https://python.scicrunch.io/controller/" path="reprocess" %}
+{% api-method method="post" host="https://python.scicrunch.io/controller/" path="reprocess" %}
 {% api-method-summary %}
 reprocess
 {% endapi-method-summary %}

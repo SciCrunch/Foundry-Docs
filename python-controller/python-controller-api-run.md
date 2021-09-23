@@ -1,6 +1,6 @@
 # Python Controller API - Run
 
-{% api-method method="get" host="https://python.scicrunch.io/controller/" path="run" %}
+{% api-method method="post" host="https://python.scicrunch.io/controller/" path="run" %}
 {% api-method-summary %}
 run
 {% endapi-method-summary %}
