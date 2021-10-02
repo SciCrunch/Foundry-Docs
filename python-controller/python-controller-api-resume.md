@@ -8,7 +8,9 @@ resume
 {% api-method-description %}
 **This is an admin level API**  
   
-It is counter method for `pause` API. To be run to resume the system, if the system is **PAUSED**. It will set the global flag from **PAUSED** to **ALL\_CLEAR**. 
+It is counter method for `pause` API. To be run to resume the system, if the system is **PAUSED**. It will set the global flag from **PAUSED** to **ALL\_CLEAR**.   
+  
+**Note**: Each action on this API is recorded and will update process\_request, ingestors and system\_status tables in Foundry database.
 {% endapi-method-description %}
 
 {% api-method-spec %}
