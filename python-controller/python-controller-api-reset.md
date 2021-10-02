@@ -42,3 +42,18 @@ Source ID to be reset
 {% endapi-method-spec %}
 {% endapi-method %}
 
+This function is available through client, can be run using `on_hold.py` with `inactivate` argument
+
+```text
+python on_hold.py -h
+usage: on_hold.py [-h] [-user USERID] [-comment COMMENT] resourceID state
+
+positional arguments:
+  resourceID        Resource name
+  state             Specify HOLD / INACTIVATE
+
+optional arguments:
+  -h, --help        show this help message and exit
+  -user USERID      userID
+```
+

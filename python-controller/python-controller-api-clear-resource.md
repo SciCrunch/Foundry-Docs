@@ -6,7 +6,7 @@ clear\_source
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Clears the source status from HOLD to CLEAR. 
+One can not start any workflow on the source which is on HOLD. clear\_source API clears the source status from HOLD to CLEAR. 
 {% endapi-method-description %}
 
 {% api-method-spec %}

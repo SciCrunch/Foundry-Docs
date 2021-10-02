@@ -59,6 +59,18 @@ Process request started
 ```
 {% endapi-method-response-example %}
 
+{% api-method-response-example httpCode=201 %}
+{% api-method-response-example-description %}
+Process created but could not be completed due to following reason
+{% endapi-method-response-example-description %}
+
+```
+{
+    "message": "Failed request - Specified resource is on HOLD. "
+}
+```
+{% endapi-method-response-example %}
+
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
 Missing / Invalid resourceID 

@@ -6,7 +6,7 @@ hold\_source
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to put resource on HOLD. Each API call will be recorded and pushed to the process\_request table of the database.
+This endpoint allows you to put resource on HOLD. Each API call will be recorded and pushed to the process\_request table of the database. One can not run any workflow on the source which is on HOLD.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -42,5 +42,19 @@ Authentication token
 {% endapi-method-spec %}
 {% endapi-method %}
 
+This function is available through client, can be run using `on_hold.py` with `hold` argument
 
+```text
+python on_hold.py -h
+usage: on_hold.py [-h] [-user USERID] [-comment COMMENT] resourceID state
+
+positional arguments:
+  resourceID        Resource name
+  state             Specify HOLD / INACTIVATE
+
+optional arguments:
+  -h, --help        show this help message and exit
+  -user USERID      userID
+
+```
 

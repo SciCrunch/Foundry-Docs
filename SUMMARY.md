@@ -81,6 +81,8 @@
 * [Python Controller API - Recover](python-controller/python-controller-api-recover.md)
 * [Python Controller API - Inactivate\_source](python-controller/python-controller-api-reset.md)
 * [Python Controller API - Reboot](python-controller/python-controller-api-reboot.md)
+* [Python Controller API - Pause](python-controller/pause.md)
+* [Python Controller API - Resume](python-controller/python-controller-api-resume.md)
 * [Developer Guide](python-controller/developer-guide.md)
 
 ## Foundry Dashboard
