@@ -35,7 +35,9 @@ Authentication token to track down who is emptying our stocks.
 {% endapi-method-response-example-description %}
 
 ```
-
+{
+    "message": "Source is CLEAR now"
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}

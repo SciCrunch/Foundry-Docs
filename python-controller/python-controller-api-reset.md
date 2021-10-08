@@ -35,7 +35,9 @@ Source ID to be reset
 {% endapi-method-response-example-description %}
 
 ```
-
+{
+    "message": "Source is INACTIVE now"
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}

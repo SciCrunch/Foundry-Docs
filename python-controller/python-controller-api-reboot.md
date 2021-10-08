@@ -29,7 +29,9 @@ Authentication Token
 {% endapi-method-response-example-description %}
 
 ```
-
+{
+    "message": "SUCCESS : Primary Consumer Rebooted"
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}

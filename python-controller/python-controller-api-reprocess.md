@@ -39,17 +39,41 @@ Authentication token
 {% endapi-method-response-example-description %}
 
 ```
-
+{
+    "message": "Your Request started"
+}
 ```
 {% endapi-method-response-example %}
 
-{% api-method-response-example httpCode=404 %}
+{% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
 
 {% endapi-method-response-example-description %}
 
 ```
+{
+    "message": "<Invalid Resource | Specify ResourceID | Failed Request : <Reason> >"
+}
+```
+{% endapi-method-response-example %}
 
+{% api-method-response-example httpCode=401 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{'message' : 'Unauthorized access'}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=403 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{'message' : 'Access Denied'}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}

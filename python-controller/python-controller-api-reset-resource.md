@@ -35,7 +35,9 @@ Authentication Token
 {% endapi-method-response-example-description %}
 
 ```
-
+{
+    "message": "FINISHED"
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}

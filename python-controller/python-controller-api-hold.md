@@ -35,7 +35,9 @@ Authentication token
 {% endapi-method-response-example-description %}
 
 ```
-
+{
+    "message": "Source is on HOLD"
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}

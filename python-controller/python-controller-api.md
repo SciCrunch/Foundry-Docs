@@ -78,7 +78,7 @@ Missing / Invalid resourceID
 
 ```
 {
-    "message": "<Invalid Resource | Specify ResourceID>"
+    "message": "<Invalid Resource | Specify ResourceID | Failed Request : <reason> >"
 }
 ```
 {% endapi-method-response-example %}

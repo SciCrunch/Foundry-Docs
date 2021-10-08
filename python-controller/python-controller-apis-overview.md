@@ -1,7 +1,7 @@
 ---
 description: >-
-  These APIs are used by Foundry Dashboard to start ingest / index / reprocess
-  the documents  and monitor the process's status
+  These APIs are used by Foundry Dashboard to start ingest / index / reprocess /
+  run the documents  and monitor the process's status
 ---
 
 # Python Controller APIs Overview
