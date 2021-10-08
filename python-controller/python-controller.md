@@ -83,5 +83,19 @@ Currently the source can be reset in two ways.
 
 If the source needs to be indexed 'N' days after it ingested. Index process should be run with -crawlOffset parameter. It is an integer between 1-31.
 
-## s
+## statename \(-stateName\)
+
+One can explicitly specify the state name \(though not necessary\) from which documents will start processing. It is implemented internally. For **`run`** workflow starts from '**`error`**' state and **`reprocess`** workflow starts from '**`finished`**' state. So in a way this parameter is also deprecated
+
+## Jsonpath \(-jsonPath\)
+
+If you want to explicitly specify the json field to be used as a docID. eg. `-jsonPath=$.dc.identifier`
+
+## Error Percentage \(-errPerc\)
+
+If there are N number of errors \(even 1 error\) during ingest,  controller cancels indexing. But there are sources which needs to be updated frequently and these are known errors. In such cases you can specify **`-errPerc`** parameter, which indicates _**allowed percentage of errors for that source**_. If the number of errors are below this percentage then the curator will be notified about these errors and still index the source.
+
+## Duplicate Percentage \(-dupPerc\)
+
+For resources like Pubmed, Organisms  there is duplicate primary key issue. For such sources curator can specify %duplicates allowed for the resource. For eg: Per ingested count if 1% duplicates allowed then if finished record count is &gt;= that value and errorCount = 0, then the resource is clear. Controller will not report it STUCK. This resource can be indexed. This check is performed before deciding the final source status. If resource passes this dup\_param test then source status will be updated to FINISHED. Ingestion logs will be updated with relevant comment - mentioning about duplicates and controller will index the source.
 
