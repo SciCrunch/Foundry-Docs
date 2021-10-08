@@ -70,3 +70,18 @@ Controller will skip the prior error check for the source
 
 Once the ingest is finished an accounting check is performed, which calculates the percentage increase or decrease in the number of records. If there is more than 20% increase or more than 10% decrease in the records, accounting check will fail and the source will not be indexed. When ingest is run with -skipCheck parameter, Accounting check will be skipped. In case of the first ingest, accounting check is by default skipped.
 
+## Reset source \(-r\)
+
+**Note : This is deprecated parameter**. 
+
+Currently the source can be reset in two ways. 
+
+1. From client : python resetResource.py &lt;resourceID&gt;. 
+2. Through reset API.
+
+## CrawlOffset \(-crawlOffset\)
+
+If the source needs to be indexed 'N' days after it ingested. Index process should be run with -crawlOffset parameter. It is an integer between 1-31.
+
+## s
+
