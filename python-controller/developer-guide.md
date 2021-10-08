@@ -22,8 +22,8 @@ def new_api():
     return(jsonify({'message' : status}), 200)
 ```
 
-1. It is necessary to apply validate\_request decorator, it will authenticate the API request.
-2. Ensure that your function returns appropriate and meaningful response which will get returned as message to the client 
+* It is necessary to apply validate\_request decorator, it will authenticate the API request.
+* Ensure that your function returns appropriate and meaningful response which will get returned as message to the client 
 
 
 
