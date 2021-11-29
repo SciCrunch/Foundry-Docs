@@ -38,6 +38,7 @@
 * [Consumer Head](developer-guide/consumer-head.md)
 * [Implementing a new Enhancer](developer-guide/implementing-a-new-enhancer.md)
 * [Document Ingestion](developer-guide/document-ingestion.md)
+* [QC Checking](developer-guide/qc_checking_utils.md)
 
 ## Foundry Enhancers
 
