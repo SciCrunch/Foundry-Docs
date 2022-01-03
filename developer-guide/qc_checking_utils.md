@@ -69,3 +69,5 @@ Foundry parses the rules and caches them ready to be used inside an enhancers co
              ...
         }
 ```
+
+**Important Note:** Be sure to restart consumer after adding/modifying any QC rules.
