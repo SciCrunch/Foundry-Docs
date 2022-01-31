@@ -26,6 +26,7 @@
 * [Built in Functions](user-guide/builtin\_functions.md)
 * [CSV Ingestor](user-guide/csv\_ingestor\_config.md)
 * [Database Ingestor](user-guide/db\_ingestor\_cfg.md)
+* [Native SQL Ingestor](user-guide/native\_sql\_ingestor\_cfg.md)
 * [FTP Ingestor](user-guide/ftp\_ingestor\_cfg.md)
 * [OAI-PMH Ingestor](user-guide/oai-pmh-ingestor.md)
 * [Web Ingestor](user-guide/web\_ingestor\_cfg.md)
