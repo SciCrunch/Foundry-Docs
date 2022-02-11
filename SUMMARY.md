@@ -25,6 +25,7 @@
 ## Foundry User Guide <a href="#user-guide" id="user-guide"></a>
 
 * [Built in Functions](user-guide/builtin\_functions.md)
+* [Default Source Descriptor](user-guide/default-source-descriptor.md)
 * [CSV Ingestor](user-guide/csv\_ingestor\_config.md)
 * [Database Ingestor](user-guide/db\_ingestor\_cfg.md)
 * [Native SQL Ingestor](user-guide/native\_sql\_ingestor\_cfg.md)
