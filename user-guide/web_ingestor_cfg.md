@@ -19,6 +19,7 @@
 * **idJsonPath** - \[String] JSON Path to the id of the summary records retrieved by `ingestURL` for the `mergeIngestURLTemplate` placeholder.
 * **normalize** - \["false", "true"] Default is "false". If set normalizes the generated JSON data record to be ingested. The normalization involves correcting array inside a single element kind of JSON generation errors.
 * **preprocessScript** - The full path to a Bash wrapper script to execute web-scrapping scripts. The wrapper script takes a single argument for the data files to be saved after the retrieval/scraping etc is finished. The argument is defined via the `ingestURL` field.
+* **waitTime** - \[long] wait time in milliseconds (default is no wait between mergeIngestURL calls). (optional).
 
 > **Source Descriptor**:
 >
