@@ -10,7 +10,8 @@ description: >-
 * **name:** "Xenopus Express"&#x20;
 * **scrID:** "SCR\_016373"
 * **ingestMethod:** "CSV"&#x20;
-* **ingestURL:** "file:///home/ubuntu/dev/java/Foundry-Data/OriginalData/SCR\_016373/XenopusExpress.csv"&#x20;
+* **ingestURL:** "file:///home/ubuntu/dev/java/Foundry-Data/OriginalData/SCR\_016373/XenopusExpress.csv" \
+  **Note: Option for certain ingestors**
 * **transformScript:** "/home/ubuntu/dev/java/Foundry-Data/Transformations/SCR\_016373-XenopusExpress-RIN.trs"
 * **primaryKeyJSONPath:** "$.'RRID\_suggested'"&#x20;
 * **useCache:** "false"
