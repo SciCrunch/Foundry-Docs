@@ -1,48 +1,66 @@
 # Python Controller API - Reset resource
 
-{% api-method method="post" host="https://python.scicrunch.io/controller/" path="reset" %}
-{% api-method-summary %}
-reset
-{% endapi-method-summary %}
+{% swagger baseUrl="https://python.scicrunch.io/controller/" path="reset" method="post" summary="reset" %}
+{% swagger-description %}
+**This is an admin level API.**
 
-{% api-method-description %}
-**This is an admin level API.**   
-  
-This API should be run in one of the following conditions : If the source seems stuck while ingesting OR when Foundry source\_status api shows error message "**Cannot start ingesting: Source '&lt;source name&gt;' is already ingesting/processing!"**.   
-  
-It takes minimum of 2 mins to maximum of 25 mins to reset the source in the Foundry.   
-  
-**Note:** This is an independent request, it is not recorded in the process\_request table of Foundry database.
-{% endapi-method-description %}
+ 
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="resourceID" type="string" required=true %}
+\
+
+
+****
+
+\
+
+
+****
+
+This API should be run in one of the following conditions : If the source seems stuck while ingesting OR when Foundry source_status api shows error message "
+
+**Cannot start ingesting: Source '<source name>' is already ingesting/processing!"**
+
+. 
+
+\
+
+
+
+
+\
+
+
+It takes minimum of 2 mins to maximum of 25 mins to reset the source in the Foundry. 
+
+\
+
+
+
+
+\
+
+
+
+
+**Note:**
+
+ This is an independent request, it is not recorded in the process_request table of Foundry database.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="resourceID" type="string" %}
 Source ID to be reset
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="api\_key" type="string" required=true %}
+{% swagger-parameter in="query" name="api_key" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {
     "message": "FINISHED"
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

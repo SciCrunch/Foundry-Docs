@@ -1,77 +1,63 @@
 # Foundry API: Indexing
 
-{% api-method method="post" host="https://foundry-dev.scicrunch.io" path="/dashboard/index" %}
-{% api-method-summary %}
-dashboard/index
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://foundry-dev.scicrunch.io" path="/dashboard/index" method="post" summary="dashboard/index" %}
+{% swagger-description %}
 Create ES index for a processed resource
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-form-data-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="body" name="apiKey" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="batchSize" type="string" required=false %}
+{% swagger-parameter in="body" name="batchSize" type="string" %}
 Default is 100
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="filter" type="string" required=false %}
+{% swagger-parameter in="body" name="filter" type="string" %}
 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="idJsonPath" type="string" required=false %}
+{% swagger-parameter in="body" name="idJsonPath" type="string" %}
 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="idList" type="string" required=false %}
+{% swagger-parameter in="body" name="idList" type="string" %}
 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="mappingFile" type="string" required=false %}
+{% swagger-parameter in="body" name="mappingFile" type="string" %}
 Name of mapping file along with path information
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="mode" type="string" required=false %}
-\[full \| update\] default is full
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="mode" type="string" %}
+\[full | update] default is full
+{% endswagger-parameter %}
 
-{% api-method-parameter name="pkList" type="string" required=false %}
+{% swagger-parameter in="body" name="pkList" type="string" %}
 Primary key list file
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="sourceID" type="string" required=true %}
+{% swagger-parameter in="body" name="sourceID" type="string" %}
 Source ID to be index
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="status2Match" type="string" required=true %}
+{% swagger-parameter in="body" name="status2Match" type="string" %}
 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="urlStr" type="string" required=true %}
+{% swagger-parameter in="body" name="urlStr" type="string" %}
 url string
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="pwd" type="string" required=true %}
-Password. \(Optional if ES server does not need authentication\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="pwd" type="string" %}
+Password. (Optional if ES server does not need authentication)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="user" type="string" required=true %}
-ES user name \(This is optional if ES server does not need authentication\)
-{% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter in="body" name="user" type="string" %}
+ES user name (This is optional if ES server does not need authentication)
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Indexing started. If there is an error, `numIndexed` field will not be present in the JSON response body, instead an `errMessage` field will be present.
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Indexing started. If there is an error, numIndexed field will not be present in the JSON response body, instead an errMessage field will be present." %}
 ```
 {
   "url": "http://localhost:9200/scr_013869_rin_test/data",
@@ -80,69 +66,41 @@ Indexing started. If there is an error, `numIndexed` field will not be present i
   "errMessage": "<error message if an error has occurred>"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-If any of the required parameter not provided OR provided sourceID doesn't exists
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="If any of the required parameter not provided OR provided sourceID doesn't exists" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-Unauthorized Request
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="Unauthorized Request" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-Server Error
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="500" description="Server Error" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="https://foundry-dev.scicrunch.io" path="/dashboard/index\_status" %}
-{% api-method-summary %}
-dashboard/index\_status
-{% endapi-method-summary %}
+{% swagger baseUrl="https://foundry-dev.scicrunch.io" path="/dashboard/index_status" method="post" summary="dashboard/index_status" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="query" name="apiKey" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="urlstr" type="string" required=true %}
+{% swagger-parameter in="query" name="urlstr" type="string" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {
   "url": "http://localhost:9200/scr_013869_rin_test/data",
@@ -150,50 +108,30 @@ Authentication Token
   "numIndexed": 287
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-If the required parameter is malformed
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="If the required parameter is malformed" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-Unauthorized Request
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="Unauthorized Request" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="404" description="" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-Server Error
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="500" description="Server Error" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

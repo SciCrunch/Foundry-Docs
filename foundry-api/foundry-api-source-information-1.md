@@ -1,29 +1,15 @@
 # Foundry API: Source Information
 
-{% api-method method="get" host="https://foundry-dev.scicrunch.io/foundry/api" path="/sources" %}
-{% api-method-summary %}
-sources
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://foundry-dev.scicrunch.io/foundry/api" path="/sources" method="get" summary="sources" %}
+{% swagger-description %}
 This endpoint allows you to get free cakes.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="query" name="apiKey" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-_Response Body_: \(`A JSON array of JSON objects one per source`\).
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Response Body: (A JSON array of JSON objects one per source)." %}
 ```
 [
   {
@@ -56,63 +42,37 @@ _Response Body_: \(`A JSON array of JSON objects one per source`\).
   }
 ]
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-Unauthorized request
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="Unauthorized request" %}
 ```
-
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-Server Error
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="500" description="Server Error" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://foundry-dev.scicrunch.io" path="/sources/source" %}
-{% api-method-summary %}
-sources/source
-{% endapi-method-summary %}
+{% swagger baseUrl="https://foundry-dev.scicrunch.io" path="/sources/source" method="get" summary="sources/source" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="sourceID" type="string" required=true %}
+{% swagger-parameter in="query" name="sourceID" type="string" %}
 Source Identifier
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="dataSource" type="string" required=false %}
+{% swagger-parameter in="query" name="dataSource" type="string" %}
 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="query" name="apiKey" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-_Response Body_: \(`A JSON object`\)
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Response Body: (A JSON object)" %}
 ```
 {
   "name": "RIN - Cell Lines",
@@ -137,28 +97,15 @@ _Response Body_: \(`A JSON object`\)
   "lastModified": "Fri Dec 20 13:54:00 PST 2019"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-Unauthorized Request
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="Unauthorized Request" %}
 ```
-
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-Server Error
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="500" description="Server Error" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

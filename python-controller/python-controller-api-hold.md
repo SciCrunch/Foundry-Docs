@@ -1,52 +1,34 @@
 # Python Controller API - Hold
 
-{% api-method method="post" host="https://python.scicrunch.io/controller/" path="hold\_source" %}
-{% api-method-summary %}
-hold\_source
-{% endapi-method-summary %}
+{% swagger baseUrl="https://python.scicrunch.io/controller/" path="hold_source" method="post" summary="hold_source" %}
+{% swagger-description %}
+This endpoint allows you to put resource on HOLD. Each API call will be recorded and pushed to the process_request table of the database. One can not run any workflow on the source which is on HOLD.
+{% endswagger-description %}
 
-{% api-method-description %}
-This endpoint allows you to put resource on HOLD. Each API call will be recorded and pushed to the process\_request table of the database. One can not run any workflow on the source which is on HOLD.
-{% endapi-method-description %}
+{% swagger-parameter in="path" name="userID" type="integer" %}
+Default auto_run (userID = 4)
+{% endswagger-parameter %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="userID" type="integer" required=false %}
-Default auto\_run \(userID = 4\)
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="resourceID" type="string" required=true %}
+{% swagger-parameter in="path" name="resourceID" type="string" %}
 ID of the source to be put on hold
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-headers %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
+{% swagger-parameter in="header" name="api_key" type="string" %}
 Authentication token 
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {
     "message": "Source is on HOLD"
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 This function is available through client, can be run using `on_hold.py` with `hold` argument
 
-```text
+```
 python on_hold.py -h
 usage: on_hold.py [-h] [-user USERID] [-comment COMMENT] resourceID state
 
@@ -59,4 +41,3 @@ optional arguments:
   -user USERID      userID
 
 ```
-

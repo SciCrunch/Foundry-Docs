@@ -1,41 +1,39 @@
 # Foundry API: Run a Source
 
-{% api-method method="post" host="https://foundry-dev.scicrunch.io" path="/dashboard/run" %}
-{% api-method-summary %}
-dashboard/run
-{% endapi-method-summary %}
+{% swagger baseUrl="https://foundry-dev.scicrunch.io" path="/dashboard/run" method="post" summary="dashboard/run" %}
+{% swagger-description %}
+For a given resource, runs the Foundry pipeline on the records having the status specified 
 
-{% api-method-description %}
-For a given resource, runs the Foundry pipeline on the records having the status specified `status2Match` starting from the pipeline step name provided with `stepName` till the end of the pipeline. This call schedules a run request to be run asynchronously and returns the request status after one second wait. Subsequent enquiries for the run status should be made via `dashboard/run_status` API call.
-{% endapi-method-description %}
+`status2Match`
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-form-data-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
+ starting from the pipeline step name provided with 
+
+`stepName`
+
+ till the end of the pipeline. This call schedules a run request to be run asynchronously and returns the request status after one second wait. Subsequent enquiries for the run status should be made via 
+
+`dashboard/run_status`
+
+ API call.
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="apiKey" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="sourceID" type="string" required=true %}
+{% swagger-parameter in="body" name="sourceID" type="string" %}
 Source Identifier
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="status2Match" type="string" required=true %}
-\[error \| finished\]
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="status2Match" type="string" %}
+\[error | finished]
+{% endswagger-parameter %}
 
-{% api-method-parameter name="stepName" type="string" required=true %}
+{% swagger-parameter in="body" name="stepName" type="string" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-_Response Body_: \(`A JSON object`\)
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Response Body: (A JSON object)" %}
 ```
 {
   "status": "RUNNING",
@@ -43,79 +41,67 @@ _Response Body_: \(`A JSON object`\)
   "errMessage": "<only shown if the status is ERROR>"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-If any of the sourceID, statusMatch and stepName are not provided
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="If any of the sourceID, statusMatch and stepName are not provided" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-Unauthorized Request
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="Unauthorized Request" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-Server Error
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="500" description="Server Error" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 
 
-{% api-method method="get" host="https://foundry-dev.scicrunch.io" path="/dashboard/run\_status" %}
-{% api-method-summary %}
-dashboard/run\_status
-{% endapi-method-summary %}
+{% swagger baseUrl="https://foundry-dev.scicrunch.io" path="/dashboard/run_status" method="get" summary="dashboard/run_status" %}
+{% swagger-description %}
+Returns the status of a recent run request. If no run is scheduled or the run request is already finished for the given 
 
-{% api-method-description %}
-Returns the status of a recent run request. If no run is scheduled or the run request is already finished for the given `sourceID`, `status2Match` and `stepName`, returns HTTP `404` error.
-{% endapi-method-description %}
+`sourceID`
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
+, 
+
+`status2Match`
+
+ and 
+
+`stepName`
+
+, returns HTTP 
+
+`404`
+
+ error.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="apiKey" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="sourceID" type="string" required=true %}
+{% swagger-parameter in="query" name="sourceID" type="string" %}
 Source Identifier
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="status2Match" type="string" required=true %}
-\[error \| finished\]
-{% endapi-method-parameter %}
+{% swagger-parameter in="query" name="status2Match" type="string" %}
+\[error | finished]
+{% endswagger-parameter %}
 
-{% api-method-parameter name="stepName" type="string" required=true %}
+{% swagger-parameter in="query" name="stepName" type="string" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-_Response Body_: \(`A JSON Object`\)
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Response Body: (A JSON Object)" %}
 ```
 {
   "status": "<RUNNING|FINISHED|ERROR>",
@@ -123,48 +109,29 @@ _Response Body_: \(`A JSON Object`\)
   "errMessage": "<only shown if the status is ERROR>"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-If any of the sourceID, statusMatch and stepName are not provided
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="If any of the sourceID, statusMatch and stepName are not provided" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-Unauthorized Request
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="Unauthorized Request" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-If no run is scheduled or the run request is already finished for the given `sourceID`, `status2Match` and `stepName`
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="404" description="If no run is scheduled or the run request is already finished for the given sourceID, status2Match and stepName" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="500" description="" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

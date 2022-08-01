@@ -6,19 +6,18 @@ Permission to copy, modify, and distribute this software and its documentation f
 
 Permission to make commercial use of this software may be obtained by contacting:
 
-Office of Innovation and Commercialization   
- 9500 Gilman Drive, Mail Code 0910   
- University of California   
- La Jolla, CA 92093-0910   
- \(858\) 534-5815   
- invent@ucsd.edu   
+Office of Innovation and Commercialization \
+&#x20;9500 Gilman Drive, Mail Code 0910 \
+&#x20;University of California \
+&#x20;La Jolla, CA 92093-0910 \
+&#x20;(858) 534-5815 \
+&#x20;invent@ucsd.edu \
 
 
 This software program and documentation are copyrighted by The Regents of the University of California. The software program and documentation are supplied “as is”, without any accompanying services from The Regents. The Regents does not warrant that the operation of the program will be uninterrupted or error-free. The end-user understands that the program was developed for research purposes and is advised not to rely exclusively on the program for any reason.
 
 IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER IS ON AN “AS IS” BASIS, AND THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 
-From the UCSD Office of Innovation & Commercialization \(OIC\) Copyrights and Patents webpage: [https://blink.ucsd.edu/sponsor/oic/copyright.html\#UC-Copyright-Notice](https://blink.ucsd.edu/sponsor/oic/copyright.html#UC-Copyright-Notice)
+From the UCSD Office of Innovation & Commercialization (OIC) Copyrights and Patents webpage: [https://blink.ucsd.edu/sponsor/oic/copyright.html#UC-Copyright-Notice](https://blink.ucsd.edu/sponsor/oic/copyright.html#UC-Copyright-Notice)
 
 Update: April 16, 2019, Updated address for OIC and added webpage link for license source
-

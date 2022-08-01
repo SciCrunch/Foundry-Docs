@@ -1,116 +1,70 @@
 # Python Controller API - Run
 
-{% api-method method="post" host="https://python.scicrunch.io/controller/" path="run" %}
-{% api-method-summary %}
-run
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://python.scicrunch.io/controller/" path="run" method="post" summary="run" %}
+{% swagger-description %}
 This endpoint allows you to run the source for errors.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
+{% swagger-parameter in="query" name="api_key" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="resourceID" type="string" required=true %}
+{% swagger-parameter in="query" name="resourceID" type="string" %}
 Source ID to be run for errors
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="userID" type="integer" required=false %}
-If not provided default \(4 - auto-run\) will be used
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter in="query" name="userID" type="integer" %}
+If not provided default (4 - auto-run) will be used
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {
     "message": "Your Request started"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="" %}
 ```
 {
     "message": "<Invalid Resource | Specify ResourceID | Failed Request : <Reason> >"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=401 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="401" description="" %}
 ```
 {'message' : 'Unauthorized access'}
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="" %}
 ```
 {'message' : 'Access Denied'}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://python.scicrunch.io/controller/" path="run\_status" %}
-{% api-method-summary %}
-run\_status
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://python.scicrunch.io/controller/" path="run_status" method="get" summary="run_status" %}
+{% swagger-description %}
 This endpoint will check the status of the ongoing run process
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
+{% swagger-parameter in="query" name="api_key" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="resourceID" type="string" required=true %}
+{% swagger-parameter in="query" name="resourceID" type="string" %}
 Source ID
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="userID" type="integer" required=false %}
-Default auto\_run \(4\)
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter in="query" name="userID" type="integer" %}
+Default auto_run (4)
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

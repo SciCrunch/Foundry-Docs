@@ -1,178 +1,117 @@
 # Python Controller API - Ingest
 
-{% api-method method="post" host="https://python.scicrunch.io/controller/" path="ingest" %}
-{% api-method-summary %}
-ingest
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://python.scicrunch.io/controller/" path="ingest" method="post" summary="ingest" %}
+{% swagger-description %}
 This endpoint allows you to start the ingest workflow for specified resource in Foundry.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="userID" type="number" required=false %}
-User ID \(default = 4\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="query" name="userID" type="number" %}
+User ID (default = 4)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="-dupPerc" type="number" required=false %}
-Allowed duplicate percentage \(default = None\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="query" name="-dupPerc" type="number" %}
+Allowed duplicate percentage (default = None)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="-errPerc" type="number" required=false %}
-Allowed error percentage \(default = None\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="query" name="-errPerc" type="number" %}
+Allowed error percentage (default = None)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="-f" type="boolean" required=false %}
-Force ingest, irrespective of prior error state \(default = False\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="query" name="-f" type="boolean" %}
+Force ingest, irrespective of prior error state (default = False)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="-sourceType" type="string" required=false %}
-Specify the type of the source, {rin, literature, mentions, ks} \(default = rin\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="query" name="-sourceType" type="string" %}
+Specify the type of the source, {rin, literature, mentions, ks} (default = rin)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="-skipCheck" type="boolean" required=false %}
+{% swagger-parameter in="query" name="-skipCheck" type="boolean" %}
 Skip Accounting check
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="resourceID" type="string" required=true %}
+{% swagger-parameter in="query" name="resourceID" type="string" %}
 Source to be ingested
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="api\_key" type="string" required=true %}
+{% swagger-parameter in="query" name="api_key" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Process request started
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Process request started" %}
 ```
 {
     "message": "Your Request started"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=201 %}
-{% api-method-response-example-description %}
-Process created but could not be completed due to following reason
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="201" description="Process created but could not be completed due to following reason" %}
 ```
 {
     "message": "Failed request - Specified resource is on HOLD. "
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-Missing / Invalid resourceID 
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="Missing / Invalid resourceID " %}
 ```
 {
     "message": "<Invalid Resource | Specify ResourceID | Failed Request : <reason> >"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=401 %}
-{% api-method-response-example-description %}
-Unauthorized Request
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="401" description="Unauthorized Request" %}
 ```
 {'message' : 'Unauthorized access'}
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-User does not have access privileges 
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="User does not have access privileges " %}
 ```
 {'message' : 'Access Denied'}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://python.scicrunch.io/controller/" path="ingest\_status" %}
-{% api-method-summary %}
-ingest\_status
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://python.scicrunch.io/controller/" path="ingest_status" method="get" summary="ingest_status" %}
+{% swagger-description %}
 Allows you to check the status of an ongoing ingest of a specific resource
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
+{% swagger-parameter in="query" name="api_key" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="resourceID" type="string" required=true %}
+{% swagger-parameter in="query" name="resourceID" type="string" %}
 Source ID
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="200" description="" %}
+```
 {
     "status": "<Running | Finished | No ongoing ingest>"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-Missing / Invalid Resource ID
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="Missing / Invalid Resource ID" %}
 ```
 {
     "message": "<Invalid Resource | Specify ResourceID>"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=401 %}
-{% api-method-response-example-description %}
-Unauthorized request
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="401" description="Unauthorized request" %}
 ```
 {'message' : 'Unauthorized access'}
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-User does not have access privileges
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="User does not have access privileges" %}
 ```
 {'message' : 'Access Denied'}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

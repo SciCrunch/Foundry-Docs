@@ -1,4 +1,4 @@
-# Foundry API: Source Ingestion \(old\)
+# Foundry API: Source Ingestion (old)
 
 ### `POST dashboard/start`
 
@@ -6,8 +6,8 @@ ingest a resource.
 
 #### Request
 
-* _Form Param_: `apiKey`, `string` 
-* _Form Param_: `sourceID`, `string` 
+* _Form Param_: `apiKey`, `string`&#x20;
+* _Form Param_: `sourceID`, `string`&#x20;
 
 #### Response
 
@@ -15,7 +15,7 @@ _Content-Type_: `application/json`
 
 **200 OK**
 
-_Response Body_: \(`A JSON object`\)
+_Response Body_: (`A JSON object`)
 
 ```javascript
 {
@@ -49,7 +49,7 @@ _Response Body_: \(`A JSON object`\)
 
 **500 Internal Server Error**
 
-\*\*\*\*
+****
 
 ### `GET dashboard/ingest_logs`
 
@@ -59,7 +59,7 @@ returns all the ingestion logs for a resource in reverse chronological order.
 
 _No body_
 
-* _Query Param_: `apiKey`, `string` 
+* _Query Param_: `apiKey`, `string`&#x20;
 * _Query Param_: `sourceID`, `string`
 
 #### Response
@@ -68,7 +68,7 @@ _Content-Type_: `application/json`
 
 **200 OK**
 
-_Response Body_: \(`A JSON object`\)
+_Response Body_: (`A JSON object`)
 
 ```javascript
 {"ingestLogs": [{
@@ -94,5 +94,4 @@ if no sourceID is provided or sourceID is empty
 
 **500 Internal Server Error**
 
-_Response Body_: \(`error message`\)
-
+_Response Body_: (`error message`)

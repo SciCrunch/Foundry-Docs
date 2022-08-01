@@ -1,33 +1,19 @@
 # Foundry API: Source Ingestion
 
-{% api-method method="post" host="https://foundry-dev.scicrunch.io/foundry/api" path="/dashboard/start" %}
-{% api-method-summary %}
-dashboard/start
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://foundry-dev.scicrunch.io/foundry/api" path="/dashboard/start" method="post" summary="dashboard/start" %}
+{% swagger-description %}
 This endpoint allows you to ingest a resource
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-form-data-parameters %}
-{% api-method-parameter name="sourceID" type="string" required=true %}
+{% swagger-parameter in="body" name="sourceID" type="string" %}
 Source Identifier to be ingested
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="body" name="apiKey" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-_Response Body_: \(`A JSON object`\)
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Response Body: (A JSON object)" %}
 ```
 {
   "sourceID": "SCR_013869-Cellosaurus-RIN-test",
@@ -55,59 +41,33 @@ _Response Body_: \(`A JSON object`\)
   }
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
- Unauthorized request
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description=" Unauthorized request" %}
 ```
-
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-Server error
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="500" description="Server error" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://foundry-dev.scicrunch.io/foundry/api" path="/ingest\_logs" %}
-{% api-method-summary %}
-dashboard/ingest\_logs
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://foundry-dev.scicrunch.io/foundry/api" path="/ingest_logs" method="get" summary="dashboard/ingest_logs" %}
+{% swagger-description %}
 Returns all the ingestion logs for a resource in reverse chronological order.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="sourceID" type="string" required=true %}
+{% swagger-parameter in="query" name="sourceID" type="string" %}
 Source Identifier 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="query" name="apiKey" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-_Response Body_: \(`A JSON object`\)
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Response Body: (A JSON object)" %}
 ```
 {"ingestLogs": [{
   "resourceID": "SCR_004712-CDC-CDIsmall",
@@ -123,40 +83,24 @@ _Response Body_: \(`A JSON object`\)
   "errorMessage": "This is only set when ingestion cannot be started"
 }]}
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-If no sourceID is provided or sourceID is empty
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="If no sourceID is provided or sourceID is empty" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-Unauthorized Request
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="Unauthorized Request" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-Server Error
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="500" description="Server Error" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

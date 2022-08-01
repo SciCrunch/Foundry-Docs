@@ -1,80 +1,46 @@
 # Foundry API: Reset a Source
 
-{% api-method method="post" host="https://foundry-dev.scicrunch.io" path="/dashboard/reset" %}
-{% api-method-summary %}
-dashboard/reset
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://foundry-dev.scicrunch.io" path="/dashboard/reset" method="post" summary="dashboard/reset" %}
+{% swagger-description %}
 Resets the state of the resource in Foundry to allow further ingestion/run operations
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-form-data-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="body" name="apiKey" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="sourceID" type="string" required=true %}
+{% swagger-parameter in="body" name="sourceID" type="string" %}
 Source Identifier
-{% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Reset request submitted
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Reset request submitted" %}
 ```
 {"status": "reset"}
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-If no sourceID provided or sourceID is empty
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="If no sourceID provided or sourceID is empty" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-If sourceID does not correspond to a known resource
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="404" description="If sourceID does not correspond to a known resource" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-Server Error
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="500" description="Server Error" %}
 ```
 Response Body: (error message)
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

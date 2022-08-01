@@ -4,35 +4,21 @@ description: Describes the APIs for checking the source's status
 
 # Foundry API: Status Information
 
-{% api-method method="get" host="https://foundry-dev.scicrunch.io" path="/foundry/api/dashboard/status" %}
-{% api-method-summary %}
-dashboard/status
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://foundry-dev.scicrunch.io" path="/foundry/api/dashboard/status" method="get" summary="dashboard/status" %}
+{% swagger-description %}
 Gives the status of a single source
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="query" name="apiKey" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="sourceID" type="string" required=true %}
+{% swagger-parameter in="query" name="sourceID" type="string" %}
 Source to be ingested
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="200" description="" %}
+```
 {
   "sourceID": "SCR_013869-Cellosaurus-RIN",
   "dataSource": "SCR_013869-Cellosaurus-RIN",
@@ -59,76 +45,40 @@ Source to be ingested
   }
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="404" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="500" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://foundry-dev.scicrunch.io" path="/foundry/api/dashboard/status/all" %}
-{% api-method-summary %}
-dashboard/status/all
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://foundry-dev.scicrunch.io" path="/foundry/api/dashboard/status/all" method="get" summary="dashboard/status/all" %}
+{% swagger-description %}
 Gives the status of all the sources
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="query" name="apiKey" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-A JSON array of JSON objects, one per source
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="200" description="A JSON array of JSON objects, one per source" %}
+```
 [
   {
     "sourceID": "SCR_013869-Cellosaurus-RIN",
@@ -205,28 +155,15 @@ A JSON array of JSON objects, one per source
   }
 ]
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="500" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

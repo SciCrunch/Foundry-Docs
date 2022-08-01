@@ -1,116 +1,67 @@
 # Python Controller API - Reprocess
 
-{% api-method method="post" host="https://python.scicrunch.io/controller/" path="reprocess" %}
-{% api-method-summary %}
-reprocess
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://python.scicrunch.io/controller/" path="reprocess" method="post" summary="reprocess" %}
+{% swagger-description %}
 This endpoint allows you to reprocess all the documents from the finished state.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="userID" type="integer" required=false %}
-Default auto\_run \(4\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="path" name="userID" type="integer" %}
+Default auto_run (4)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="index\_name" type="string" required=true %}
-Name of the index \(all lowercase\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="path" name="index_name" type="string" %}
+Name of the index (all lowercase)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="resourceID" type="string" required=true %}
+{% swagger-parameter in="path" name="resourceID" type="string" %}
 Source ID to be reprocessed
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-headers %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
+{% swagger-parameter in="header" name="api_key" type="string" %}
 Authentication token 
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {
     "message": "Your Request started"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="" %}
 ```
 {
     "message": "<Invalid Resource | Specify ResourceID | Failed Request : <Reason> >"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=401 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="401" description="" %}
 ```
 {'message' : 'Unauthorized access'}
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="" %}
 ```
 {'message' : 'Access Denied'}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="https://python.scicrunch.io/controller/" path="reprocess\_status" %}
-{% api-method-summary %}
-reprocess\_status
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://python.scicrunch.io/controller/" path="reprocess_status" method="post" summary="reprocess_status" %}
+{% swagger-description %}
 This endpoint will check the status of the reprocess workflow 
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="resourceID" type="string" required=true %}
+{% swagger-parameter in="query" name="resourceID" type="string" %}
 Source to be ingested
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

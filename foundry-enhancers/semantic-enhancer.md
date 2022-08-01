@@ -14,13 +14,13 @@ Foundry-ES/consumers/src/main/java/org/neuinfo/foundry/consumers/jms/consumers/p
 
 Checks whether the `name`, `curie` fields are populated within the specified node. If one exists while the other doesn't, the enhancer queries the `term_mappings` table to find whether a mapping exists, otherwise it'll query the Interlex ES endpoint, retrieving the associated `name`/`curie` to create a term\_mapping.
 
-If a match is found within the term\_mappings table and the column `curation_status` has one of the following values: \[`matched`, `approved`\], matching status \(`Exact Match`, `Best Mapping`\) and ancestor history are inserted into the record who's `name`, `curie` fields matched the `matched_value`, `existing_id` columns respectively in the table.
+If a match is found within the term\_mappings table and the column `curation_status` has one of the following values: \[`matched`, `approved`], matching status (`Exact Match`, `Best Mapping`) and ancestor history are inserted into the record who's `name`, `curie` fields matched the `matched_value`, `existing_id` columns respectively in the table.
 
 ### Enhancement Workflow:
 
-![Updates records with information found in term\_mappings / Interlex](../.gitbook/assets/semantic-enhancer-workflow.png)
+![Updates records with information found in term\_mappings / Interlex](<../.gitbook/assets/Semantic Enhancer Workflow.png>)
 
-![Semantic Enhancer Workflow \(More Granular\)](../.gitbook/assets/semantic-enhancer-workflow-1-.png)
+![Semantic Enhancer Workflow (More Granular)](<../.gitbook/assets/Semantic Enhancer Workflow (1).png>)
 
 ### **Enhancement Example:**
 
@@ -81,4 +81,3 @@ Processed Data
 ```bash
 Foundry-ES/consumers/src/test/java/org/neuinfo/foundry/consumers/SemanticEnhancerTests.java
 ```
-

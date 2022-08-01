@@ -1,40 +1,43 @@
 # Python Controller API - Reboot
 
-{% api-method method="post" host="https://python.scicrunch.io/controller/" path="reboot" %}
-{% api-method-summary %}
-reboot
-{% endapi-method-summary %}
+{% swagger baseUrl="https://python.scicrunch.io/controller/" path="reboot" method="post" summary="reboot" %}
+{% swagger-description %}
+**This is an admin level API.**
 
-{% api-method-description %}
-**This is an admin level API.**  
-  
-This api will reboot the Primary Consumer on AWS. This is required whenever an update is pushed to Foundry.   
-  
-**Note:** This is an independent request, it is not recorded in the process\_request table of Foundry database
-{% endapi-method-description %}
+\
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
+
+
+
+\
+
+
+This api will reboot the Primary Consumer on AWS. This is required whenever an update is pushed to Foundry. 
+
+\
+
+
+
+
+\
+
+
+
+
+**Note:**
+
+ This is an independent request, it is not recorded in the process_request table of Foundry database
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="api_key" type="string" %}
 Authentication Token
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {
     "message": "SUCCESS : Primary Consumer Rebooted"
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

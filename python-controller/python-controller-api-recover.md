@@ -1,38 +1,47 @@
 # Python Controller API - Recover
 
-{% api-method method="post" host="https://python.scicrunch.io/controller/" path="recover" %}
-{% api-method-summary %}
-recover
-{% endapi-method-summary %}
+{% swagger baseUrl="https://python.scicrunch.io/controller/" path="recover" method="post" summary="recover" %}
+{% swagger-description %}
+**This is an admin level API.**
 
-{% api-method-description %}
-**This is an admin level API.**   
-  
-To be used to recover the system from **SYSTEM\_QUEUE\_FAILURE**, **SYSTEM\_ERROR** or **NETWORK\_FAILURE**. It will change the the system status to **RECOVERED**. 
-{% endapi-method-description %}
+ 
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
+\
+
+
+****
+
+\
+
+
+****
+
+To be used to recover the system from 
+
+**SYSTEM_QUEUE_FAILURE**
+
+, 
+
+**SYSTEM_ERROR**
+
+ or 
+
+**NETWORK_FAILURE**
+
+. It will change the the system status to 
+
+**RECOVERED**
+
+. 
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="api_key" type="string" %}
 Authentication token 
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

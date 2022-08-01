@@ -1,48 +1,28 @@
 # Python Controller API - Clear Resource
 
-{% api-method method="post" host="https://python.scicrunch.io/controller/" path="clear\_source" %}
-{% api-method-summary %}
-clear\_source
-{% endapi-method-summary %}
+{% swagger baseUrl="https://python.scicrunch.io/controller/" path="clear_source" method="post" summary="clear_source" %}
+{% swagger-description %}
+One can not start any workflow on the source which is on HOLD. clear_source API clears the source status from HOLD to CLEAR. 
+{% endswagger-description %}
 
-{% api-method-description %}
-One can not start any workflow on the source which is on HOLD. clear\_source API clears the source status from HOLD to CLEAR. 
-{% endapi-method-description %}
+{% swagger-parameter in="path" name="userID" type="integer" %}
+Default auto_run (4)
+{% endswagger-parameter %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="userID" type="integer" required=false %}
-Default auto\_run \(4\)
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="resourceID" type="string" required=true %}
+{% swagger-parameter in="path" name="resourceID" type="string" %}
 Source ID to be cleared.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-headers %}
-{% api-method-parameter name="api\_key" type="string" required=true %}
+{% swagger-parameter in="header" name="api_key" type="string" %}
 Authentication token to track down who is emptying our stocks.
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {
     "message": "Source is CLEAR now"
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 
