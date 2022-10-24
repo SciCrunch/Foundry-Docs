@@ -111,13 +111,188 @@ SCR_013731-NXR_Organisms_DEV-RIN:
 
 #### Test the transform
 
-1. If your sample data looks good then in Foundry Data run the script `test_transform.sh SCR_013731-NXR_Organisms_DEV-RIN`.
-2. This will take the sample data and try to transform it, look at the output and make sure the transform output looks how you intended it to look.
+1. If your sample data looks good then navigate to the "Transformations" folder in your code editor and open the auto-generated transformation script for your resource: `SCR_013731-NXR_Organisms_DEV-RIN.trs`.
+2. Comment out the auto-generated transformation:
+```
+
+/*
+
+transform column "$.'alternate_identifiers'" to "alternate_identifiers";
+transform column "$.'alternative_name'" to "alternative_name";
+transform column "$.'availability'" to "availability";
+transform column "$.'background'" to "background";
+transform column "$.'cat num from NXR'" to "cat num from NXR";
+transform column "$.'catalog_id'" to "catalog_id";
+transform column "$.'catalog_num_SciCrunch'" to "catalog_num_SciCrunch";
+transform column "$.'database'" to "database";
+transform column "$.'genomic_alteration'" to "genomic_alteration";
+transform column "$.'name'" to "name";
+transform column "$.'nifid'" to "nifid";
+transform column "$.'notes'" to "notes";
+transform column "$.'phenotype'" to "phenotype";
+transform column "$.'proper_citation'" to "proper_citation";
+transform column "$.'reference'" to "reference";
+transform column "$.'source_constant'" to "source_constant";
+transform column "$.'source_title'" to "source_title";
+transform column "$.'species'" to "species";
+transform column "$.'url_p'" to "url_p";
+
+##### Not in data #####
+
+transform column "$.'gene'" to "gene";
+transform column "$.'gene_id'" to "gene_id";
+transform column "$.'transgenic_insertion_type'" to "transgenic_insertion_type";
+
+*/
+
+```
+3. Add generic transformation script:
+```
+
+/** Item Information **/
+/* Set content information for record */
+/* TODO: Need to decide if organsim is category or supercategory and is family then category */
+let "item.types[0].name" = "organism";
+let "item.types[0].curie" = "ilx:0108133";
+let "item.types[0].type" = "category";
+let "item.contentTypes[0].name" = "product";
+let "item.contentTypes[0].curie" = "ilx:0381348";
+
+/** Basic Information **/
+/* Original source identifier */
+transform column "$.'catalog_id'" to "item.identifier";
+
+/* Normalized CURIE */
+transform column "$.'proper_citation'" to "item.curie";
+
+transform column "$.'name'" to "item.name";
+transform column "$.'name'" to "item.nomenclature";
+
+/* Construct Description */
+transform column "$.'notes'" to "item.description" apply {{
+
+description = value.replace("Description:","")
+result = description.strip()
+
+}};
+
+/** RRID Information **/
+transform column "$.'proper_citation'" to "rrid.curie";
+
+transform column "$.'proper_citation'" to "item.docid" apply {{ result = value.lower() }};
+
+/* Create two alternatives for now with use of proper citation */
+transform column "$.'alternate_identifiers'" to "rrid.alternateRRIDs[0].curie";
+
+let "rrid.is_unique" = "true";
+
+/* Set some default attributes */
+let "item.language" = "en";
+
+/** Community Authority **/
+transform column "$.'database'" to "authority.name";
+
+/** Catalog Information **/
+transform columns "$.'database'","$.'source_title'" to "vendors[0].name" apply {{
+result = value1 + ", " + value2
+}};
+
+let "vendors[0].abbreviation" = "AGSC";
+transform column "$.'catalog_id'" to "vendors[0].catalogNumber";
+transform column "$.'url_p'" to "vendors[0].uri";
+
+/** Organism Information **/
+let "organisms.primary[0].role" = "primary";
+transform column "$.'species'" to "organisms.primary[0].species.name";
+transform column "$.'background'" to "organisms.primary[0].background.name";
+let "organisms.primary[0].common.name" = "Salamander";
+
+/* Format proper citation based on pre-formatted version */
+transform column "$.'proper_citation'"  to "rrid.properCitation";
+
+
+/* Phenotype information */
+transform column "$.'phenotype'" to "phenotypes[].name" apply {{
+arr=re.split("\s*;\s*",value,)
+result=[x.strip() for x in arr]
+}};
+
+/* Notes */
+transform column "$.'notes'" to "item.notes[0].description";
+
+/* References */
+transform column "$.'reference'" to "references[].curie" apply {{
+arr=re.split("\s*,\s*",value,)
+result=[x.strip() for x in arr]
+}};
+
+/* Gene information */
+transform column "$.'gene'" to "genotype.gene[].name" apply {{
+arr=re.split("\s*,\s*",value,)
+result=[x.strip() for x in arr]
+}};
+
+/* Gene id information */
+transform column "$.'gene_id'" to "genotype.gene[].curie" apply {{
+arr=re.split("\s*;\s*",value,)
+result=[x.strip() for x in arr]
+}};
+
+transform column "$.'genomic_alteration'" to "genotype.genomicAlterations[].name" apply {{
+arr=re.split("\s*,|;|\|\s*",value,)
+result=[x.strip() for x in arr]
+}};
+
+/* Insertion information */
+transform column "$.'transgenic_insertion_type'" to "genotype.transgenicInsertion.description";
+
+transform column "$.'availability'" to "item.availability[0].keyword";
+
+/** Create New Style UUID **/
+transform columns "$.'database'", "$.'catalog_id'" to "item.uuid" apply uuid("SCR_006372","-",value1,value2);
+
+/** Legacy DISCO attributes **/
+transform columns "$.'database'", "$.'catalog_id'" to "disco.v_uuid" apply uuid("SCR_006372","-",value1,value2);
+
+```
+4. Under "Catalog Information" heading change the abbreviation to match your stock center abbreviation. Under "Organism Information" change the organism common name to the common name of your organism. Under "Create New Style UUID" and "Legacy DISCO attributes" change the SCR RRID to the SCR RRID of your stock center.
+5. In the terminal of your code editor run `git add .` and then `git commit -m "message detailing changes"`, then run `git push` to push your changes up to GitHub.
+6. While connected to the foundry machine in Foundry-Data in the terminal run the command `git pull` to pull your edits into the foundry machine.
+
+7. Then in Foundry Data run the script `test_transform.sh SCR_013731-NXR_Organisms_DEV-RIN`.
+8. This will take the sample data and try to transform it, look at the output and make sure the transform output looks how you intended it to look.
+9. Make sure the results of the transform look good, if there are any issues with the transform then edit your transformation script and then do steps 5 - 7 again.
 
 #### Test QC rules
 
-1. If the results from the transform look good then run the script `test_qc.sh SCR_013731-NXR_Organisms_DEV-RIN`.
-2. In the result you should see 'QC rules syntax OK'.
+1. If the results from the transform look good then navigate to the "QualityAssuranceRules" folder in your code editor and create a new file in the directory named the same as the file you created in the "Source Descriptors" folder: `SCR_013731-NXR_Organisms_DEV-RIN.yml`.
+2. If the RRIDs of your resource contain only numbers similar to **RRID:NXR_0220** then copy this information into your QC file:
+```
+"ValueExists":
+  - path: "$.rrid.curie"
+    valueRegex: "RRID:NXR_[0-9]+"
+  - path: "$.disco.v_uuid"
+    valueRegex: "[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}"
+  - path: "$.item.uuid"
+    valueRegex: "[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}"
+  - path: "$.item.docid"
+    valueRegex: ".+"
+```
+3. If the RRIDs of your resource contain both letters and number similar to **RRID:XEP_Gal047** then copy this information into your QC file instead to include lowercase and uppercase letters along with numbers in your QC check:
+```
+"ValueExists":
+  - path: "$.rrid.curie"
+    valueRegex: "RRID:XEP_[a-zA-Z0-9]+"
+  - path: "$.disco.v_uuid"
+    valueRegex: "[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}"
+  - path: "$.item.uuid"
+    valueRegex: "[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}"
+  - path: "$.item.docid"
+    valueRegex: ".+"
+```
+4. Save your changes and in the code editor in your terminal run the git commands from previous steps to push your changes up to Github.
+5. Then while connected to the Foundry machine and in "Foundry-Data" run `git pull` to pull your changes into foundry. You should see your file name show up after this step.
+6. Then run the script `test_qc.sh SCR_013731-NXR_Organisms_DEV-RIN` to test that your QC file is working. You should see a message 'QC rules syntax OK'.
 
 #### Update source
 
