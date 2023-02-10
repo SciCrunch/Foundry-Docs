@@ -1,6 +1,6 @@
 # End to End Source Ingestion Tutorial (Simplified)
 
-## Full Example of Source Ingestion
+## Full Example of Source Ingestion (CSV Ingestion)
 
 This example provides information on how to ingest a federated data resource within Foundry from scratch. This example uses sample data from [National Xenopus Resource (NXR)](https://docs.google.com/spreadsheets/d/1O2UggvZjtRRUTm1O3J8lRGeoEt8j9FGxJXxTGAiTJnI/edit?usp=sharing).
 
@@ -304,3 +304,12 @@ transform columns "$.'database'", "$.'catalog_id'" to "disco.v_uuid" apply uuid(
 2. In your terminal use the command `cd bin` to move into the bin directory.
 3. In your terminal use the command `./manager.sh` to open the manager.
 4. In your terminal use the command `list` to see a list of resources, make sure your resource is listed. It should be at the bottom.
+
+#### Editing a source's transformation after ingestion
+
+- If you edit a source's transformation file after you have already ingested that source's records then you need to send the records back to the transform and run them again. 
+  - For example if you edited the transformation for `SCR_013731-NXR_Organisms_DEV-RIN` after already ingesting the records and after updating the source using `update_source.sh SCR_013731-NXR_Organisms_DEV-RIN` then complete these steps:
+    1. Run the command `status SCR_013731-NXR_Organisms_DEV-RIN` and make sure there are no records with errors. 
+    2. IF there are NO errors then run the command `run status SCR_013731-NXR_Organisms_DEV-RIN status:finished step:transform to_end`. This will re-run the records starting with the transformation step.
+    3. Check the status of the run periodically using `status SCR_013731-NXR_Organisms_DEV-RIN`.
+    4. IF there are errors then run the command `run status SCR_013731-NXR_Organisms_DEV-RIN status:error step:transform to_end` first and then run the command `run status SCR_013731-NXR_Organisms_DEV-RIN status:finished step:transform to_end` afterwards.
