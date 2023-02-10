@@ -1,6 +1,8 @@
 # FTP Ingestor
 
 * **ftpHost** - \[String\] The FTP host URL to retrieve data from.
+* **username** - \[String\] user name for the FTP account (for non-anonymous FTP access).
+* **password** - \[String\] password for the FTP account (for non-anonymous FTP access).
 * **remotePath** - \[String\] The remote directory path for the raw data on the FTP site.
 * **parserType** - \[String\] \['xml' or 'json'\] \(default 'xml'\)
 * **filenamePattern** - \[String\] A java regular expression to match file names to be retrieved from the `remotePath` of the FTP site specified by `ftpHost`.
