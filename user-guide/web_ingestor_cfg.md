@@ -1,6 +1,6 @@
 # Web Ingestor
 
-* **ingestMethod:** "DISCO"&#x20;
+* **ingestMethod:** "WEB"&#x20;
 * **ingestURL** - \[String] The URL to retrieve data from. Acts as the argument to the `preprocessingScript` field, if it's specified.
 * **parserType** - \[String] \['xml' or 'json']
 * **documentElement** - \[String] the name of the field/element in the raw data under which a data record is contained. For XML type raw data, `documentElement` must be direct descendant of the `topElement`. For JSON type raw data, `documentElement` field can match anywhere the raw data JSON hierarchy.
