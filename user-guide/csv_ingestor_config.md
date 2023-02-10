@@ -11,3 +11,17 @@
 * **sampleMode** - \["false", "true"] Default is "false". If set to true only up to `sampleSize` data records will be ingested.
 * **sampleSize** - \[int] The number of data records that will be ingested if `sampleMode: "true"`
 * **cacheMode** - \["false", "true"] Default is "false". If true uses previously retrieved data for ingestion.
+
+## Multiple CSV File Support
+
+Multiple CSV file support assumes that all the CSV files are a single directory and have the same format (same number and type of columns).
+
+To ingest multiple CSV files, the `ingestURL` parameter needs to specify a local directory and a `filenamePattern` parameter is required with a Java regular expression pattern.
+
+For example; 
+
+```yaml
+ingestURL: "file:///var/data/data-cache/SCR_001526-IMSR/data"
+filenamePattern: "_file.txt$"
+```
+ 
