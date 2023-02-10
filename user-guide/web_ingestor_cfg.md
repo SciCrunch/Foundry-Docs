@@ -6,7 +6,22 @@
 * **documentElement** - \[String] the name of the field/element in the raw data under which a data record is contained. For XML type raw data, `documentElement` must be direct descendant of the `topElement`. For JSON type raw data, `documentElement` field can match anywhere the raw data JSON hierarchy.
 * **topElement** - \[String] The top level element in a raw XML document under which all the document (data record) level elements can be found. Only used for XML type remote content.
 * **filterJsonPath** - \[String] JSON Path to a field in a raw JSON data record. The value of matching field will be used to select data records for ingestion based on the `filterValue` configured. (Only applicable for `parserType: "json"`)
-* **filterValue** - \[String] The exact value or a regular expression for the raw data record field identified by the `filterJsonPath` configuration. A regular expression string needs to be prefixed by `re::` such as `filterValue: "re::^10\\.1"`.
+* **filterXMLPath** - \[String] A valid XPath expression to a tag text or attribute in a raw XML data record. The value of matching field will be used to select data records for ingestion based on the `filterValue` configured. (Only applicable for `parserType: "xml"`).
+The `filterValue` can be a Java regular expression also (otherwise exact match) identified by a `re::` prefix (e.g. `re::^Build` matches any value starting with 'Build').  
+
+An example source descriptor setup (only important parameters are shown) to filter XML records is shown below;
+```yaml
+ingestMethod: "WEB"
+ingestURL : "file:///var/data/data-cache/SCR_006549-Flybase/files/"
+parserType: "xml"
+documentElement: "stock"
+topElement: "chado"
+filenamePattern: ".+\\.xml$"
+filterXMLPath: "//contact/name/text()"
+filterValue: "Kyoto"
+```
+
+* **filterValue** - \[String] The exact value or a regular expression for the raw data record field identified by the `filterJsonPath` or `filterXMLPath` configuration. A regular expression string needs to be prefixed by `re::` such as `filterValue: "re::^10\\.1"`.
 * **useCache** - \["false", "true"] If true uses previously retrieved data for ingestion.
 * **cacheFilename** - Only used if `useCache: "true"`. If specified, the filename/prefix to which the `ingestURL` contents are cached. If not specified and `useCache` is set, Foundry creates a cache file name from the `ingestURL`.
 * **filenamePattern** - \[String] A java regular expression to filter file names extracted from a zip file or tar ball retrieved from `ingestURL`.
