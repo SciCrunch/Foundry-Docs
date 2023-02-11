@@ -78,3 +78,30 @@ transform columns "$.'tags'[*].'name'","$.'tags'[*].'value'" to "ns.values[]" ap
   "name5:d"
 ]}}
 ```
+
+## now function usage:
+
+transform column "$.'id'" to "ingestTime" apply now();
+
+```json
+{"ingestTime": "2022-10-31T15:49:56.298Z"}
+```
+
+## Access to metadata in the transformation script
+
+```
+transform column "#CreationDate" to "creationDate";
+transform column "#IngestTime" to "ingestTime";
+```
+
+```json
+{
+  "creationDate": "2022-10-31T15:54:05.939Z",
+  "ingestTime": "2022-10-31T15:54:06.142Z",
+}
+```
+
+Other metadata builtin variables are:
+
+  * #CrawlDate
+  * #LastSeenDate
