@@ -35,20 +35,21 @@ filterValue: "Kyoto"
 * **normalize** - \["false", "true"] Default is "false". If set normalizes the generated JSON data record to be ingested. The normalization involves correcting array inside a single element kind of JSON generation errors.
 * **preprocessScript** - The full path to a Bash wrapper script to execute web-scrapping scripts. The wrapper script takes a single argument for the data files to be saved after the retrieval/scraping etc is finished. The argument is defined via the `ingestURL` field.
 * **waitTime** - \[long] wait time in milliseconds (default is no wait between mergeIngestURL calls). (optional).
-
-> **Source Descriptor**:
->
-> ```
-> ingestURL: "file:///var/data/data-cache/SCR_010490-Protocols.io-Protocols"
-> preprocessScript: "/home/ubuntu/dev/java/Foundry-Data/OriginalData/SCR_010490/wrapper.sh"
-> ```
->
-> **wrapper.sh**:
->
-> ```
-> #! /bin/bash
-> python3 SCR_010490-ProtocolsIO-Ingest.py 'latest' $1
-> ```
-
 * **sampleMode** - \["false", "true"] Default is "false". If set to true only up to `sampleSize` data records will be ingested.
 * **sampleSize** - \[int] The number of data records that will be ingested if `sampleMode: "true"`
+
+## Preprocessing example
+
+ **Source Descriptor**:
+
+```
+ ingestURL: "file:///var/data/data-cache/SCR_010490-Protocols.io-Protocols"
+ preprocessScript: "/home/ubuntu/dev/java/Foundry-Data/OriginalData/SCR_010490/wrapper.sh"
+ ```
+
+ **wrapper.sh**:
+
+ ```
+ #! /bin/bash
+ python3 SCR_010490-ProtocolsIO-Ingest.py 'latest' $1
+ ```
