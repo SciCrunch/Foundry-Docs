@@ -298,14 +298,15 @@ transform columns "$.'database'", "$.'catalog_id'" to "disco.v_uuid" apply uuid(
 
 1. If the QC looks good then you can run the command `update_source.sh SCR_013731-NXR_Organisms_DEV-RIN`. This will add the data to the foundry. You should see two 'BUILD SUCCESS' messages in the output.
 
-#### Check to see your files in Foundry
+#### Check to See Your Files in Foundry
 
 1. In your terminal use the command `f` to move into 'Foundry-ES'
 2. In your terminal use the command `cd bin` to move into the bin directory.
 3. In your terminal use the command `./manager.sh` to open the manager.
 4. In your terminal use the command `list` to see a list of resources, make sure your resource is listed. It should be at the bottom.
+5. Run the command `update <source_name>` to make sure that all Consumers are using the updated files. EX: `update SCR_013731-NXR_Organisms_DEV-RIN`
 
-#### Editing a source's transformation after ingestion
+#### Editing a Source's Transformation After Ingestion
 
 - If you edit a source's transformation file after you have already ingested that source's records then you need to send the records back to the transform and run them again. 
   - For example if you edited the transformation for `SCR_013731-NXR_Organisms_DEV-RIN` after already ingesting the records and after updating the source using `update_source.sh SCR_013731-NXR_Organisms_DEV-RIN` then complete these steps:
@@ -313,3 +314,25 @@ transform columns "$.'database'", "$.'catalog_id'" to "disco.v_uuid" apply uuid(
     2. IF there are NO errors then run the command `run status SCR_013731-NXR_Organisms_DEV-RIN status:finished step:transform to_end`. This will re-run the records starting with the transformation step.
     3. Check the status of the run periodically using `status SCR_013731-NXR_Organisms_DEV-RIN`.
     4. IF there are errors then run the command `run status SCR_013731-NXR_Organisms_DEV-RIN status:error step:transform to_end` first and then run the command `run status SCR_013731-NXR_Organisms_DEV-RIN status:finished step:transform to_end` afterwards.
+
+#### Ingesting Records
+
+- Now with your resource in Foundry you can run the initial ingestion.
+  1. Run the command `ingest <source_name>` to start the initial ingestion. EX: `ingest SCR_013731-NXR_Organisms_DEV-RIN`.
+  2. Follow up with the `status <source_name>` command to see the status of your ingestion. EX: `status SCR_013731-NXR_Organisms_DEV-RIN`.
+  3. Using the command `!!` will repeat your last command so as long as `status <source_name>` is the last command you ran you can use `!!` to see the status of your ingestion.
+  4. Periodically check the status of your resource ingestion. Troubleshoot any error records and fix them. The number of finished records should equal the amount of ingested records for the initial ingestion.
+
+#### Indexing Records
+- After successfully ingesting your records with no errors you can index them to view them on the development server to confirm they look correct.
+- You must get the DEV password from Jeff.
+- This is the basis for the command. Fill in the information for a given resource:
+  ```
+  index <sourceID> <status-2-match> <url> [-filter <filter-jsonpath-exp>] [-batch <batch-size>]
+		[-mode <[full]|update>] [-mapping <mapping-file>] [-pklist <pk-list-file>]
+		[-user <ES-user>] [-pwd <ES-pwd>] [-properties <props-file>]
+		[-idList <mongo-id-list-file>] [-idJsonPath <JsonPath to the ES record ID surrounded by quotes>]
+		[-verbose <true|[false]>]
+		(e.g. index biocaddie-0006 transformed.1 http://52.32.231.227:9200/geo_20151106/dataset)
+  ```
+  - Once the records are done indexing you should be able to view them on Scicrunch on the "New Index" while logged in to a curator account.
