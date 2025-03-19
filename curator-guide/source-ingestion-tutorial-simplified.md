@@ -1,4 +1,4 @@
-# End to End Source Ingestion Tutorial (Simplified)
+# Source Ingestion Tutorial Simplified
 
 ## Full Example of Source Ingestion (CSV Ingestion)
 
@@ -8,29 +8,28 @@ This example provides information on how to ingest a federated data resource wit
 
 #### Add CSV File to Foundry Google Drive Folder
 
-There is a Google Drive folder that contains the ingest sheets Foundry uses to ingest records:
-[https://drive.google.com/drive/folders/1HuNEMHUUl8cgUoInl1EvS23dLtVWnsox?usp=sharing](https://drive.google.com/drive/folders/1HuNEMHUUl8cgUoInl1EvS23dLtVWnsox?usp=sharing)
+There is a Google Drive folder that contains the ingest sheets Foundry uses to ingest records: [https://drive.google.com/drive/folders/1HuNEMHUUl8cgUoInl1EvS23dLtVWnsox?usp=sharing](https://drive.google.com/drive/folders/1HuNEMHUUl8cgUoInl1EvS23dLtVWnsox?usp=sharing)
 
 If you do not have access to this folder you must request access.
 
 1. Look for the sheet named **Template Ingest Sheet**. This sheet serves as a template for new _Organism_ resources that are to be added to foundry.
 2. Make a copy of this template for your resource.
-   - If you have already have a CSV for your resource make sure that the column names and data fields match the template sheet.
+   * If you have already have a CSV for your resource make sure that the column names and data fields match the template sheet.
 3. Make sure the name of your CSV clearly represents the resource you want to add to Foundry.
 4. Name the sheet you want to ingest into foundry 'Production'.
 5. In the share settings of your CSV in Google Drive make sure to change the settings so that 'Anyone with the link can view'.
 
-#### Setup directory in Github for Source Data \(if needed\):
+#### Setup directory in Github for Source Data (if needed):
 
 1. Find ID of the source at Scicrunch.org:
 
-[https://scicrunch.org/resources/data/source/nlx_144509-1/search?q=NXR&l=NXR](https://scicrunch.org/resources/data/source/nlx_144509-1/search?q=NXR&l=NXR)
+[https://scicrunch.org/resources/data/source/nlx\_144509-1/search?q=NXR\&l=NXR](https://scicrunch.org/resources/data/source/nlx_144509-1/search?q=NXR\&l=NXR)
 
 1. Get ID for source:
 
-[https://scicrunch.org/resources/data/record/nlx_144509-1/SCR_013731/resolver?q=NXR&l=NXR&i=rrid:scr_013731](https://scicrunch.org/resources/data/record/nlx_144509-1/SCR_013731/resolver?q=NXR&l=NXR&i=rrid:scr_013731)
+[https://scicrunch.org/resources/data/record/nlx\_144509-1/SCR\_013731/resolver?q=NXR\&l=NXR\&i=rrid:scr\_013731](https://scicrunch.org/resources/data/record/nlx_144509-1/SCR_013731/resolver?q=NXR\&l=NXR\&i=rrid:scr_013731)
 
-#### Clone Foundry Github to local machine \(if needed\):
+#### Clone Foundry Github to local machine (if needed):
 
 If you already have the Foundry Github on your machine you can skip this step.
 
@@ -44,13 +43,12 @@ If you already have the Foundry Github on your machine you can skip this step.
 1. Login to server using `ssh foundry` in the terminal.
 2. Type the command `fd` to navigate to the _Foundry Data_ folder
 3. Use the command `git pull` to pull in any new changes into Foundry.
-
 4. In the SourceDescriptors directory create a new file for the specific source data to be ingested and transformed.
-5. Please follow the file naming convention:
+5.  Please follow the file naming convention:
 
-   `{Source ID}-{Source Resource Name}-{Resource Transformation}.yml`
+    `{Source ID}-{Source Resource Name}-{Resource Transformation}.yml`
 
-SourceDescriptors/SCR_013731-NXR_Organisms_DEV-RIN.yml
+SourceDescriptors/SCR\_013731-NXR\_Organisms\_DEV-RIN.yml
 
 7. Enter Source Information
 
@@ -84,8 +82,8 @@ SCR_013731-NXR_Organisms_DEV-RIN:
 9. **sourceID, scrID, name, primaryKeyJSONPath, ingestURL, transformScript, qcRulesYamlFile, collectionName** should all be unique to your resource.
 10. Change the portion of the ingest url after `/d/` and before `/gviz` to the corresponding value found in your share link.
 
-- Full link: `https://docs.google.com/spreadsheets/d/1O2UggvZjtRRUTm1O3J8lRGeoEt8j9FGxJXxTGAiTJnI/gviz/tq?tqx=out:csv&sheet=NXR_Live_Data`
-- Portion to change: `1O2UggvZjtRRUTm1O3J8lRGeoEt8j9FGxJXxTGAiTJnI`
+* Full link: `https://docs.google.com/spreadsheets/d/1O2UggvZjtRRUTm1O3J8lRGeoEt8j9FGxJXxTGAiTJnI/gviz/tq?tqx=out:csv&sheet=NXR_Live_Data`
+* Portion to change: `1O2UggvZjtRRUTm1O3J8lRGeoEt8j9FGxJXxTGAiTJnI`
 
 11. Make sure `sheet=NXR_Live_Data` corresponds to the name of your sheet. If you named your sheet Production it should be `sheet=Production`.
 
@@ -113,6 +111,7 @@ SCR_013731-NXR_Organisms_DEV-RIN:
 
 1. If your sample data looks good then navigate to the "Transformations" folder in your code editor and open the auto-generated transformation script for your resource: `SCR_013731-NXR_Organisms_DEV-RIN.trs`.
 2. Comment out the auto-generated transformation:
+
 ```
 
 /*
@@ -146,7 +145,9 @@ transform column "$.'transgenic_insertion_type'" to "transgenic_insertion_type";
 */
 
 ```
+
 3. Add generic transformation script:
+
 ```
 
 /** Item Information **/
@@ -255,10 +256,10 @@ transform columns "$.'database'", "$.'catalog_id'" to "item.uuid" apply uuid("SC
 transform columns "$.'database'", "$.'catalog_id'" to "disco.v_uuid" apply uuid("SCR_006372","-",value1,value2);
 
 ```
+
 4. Under "Catalog Information" heading change the abbreviation to match your stock center abbreviation. Under "Organism Information" change the organism common name to the common name of your organism. Under "Create New Style UUID" and "Legacy DISCO attributes" change the SCR RRID to the SCR RRID of your stock center.
 5. In the terminal of your code editor run `git add .` and then `git commit -m "message detailing changes"`, then run `git push` to push your changes up to GitHub.
 6. While connected to the foundry machine in Foundry-Data in the terminal run the command `git pull` to pull your edits into the foundry machine.
-
 7. Then in Foundry Data run the script `test_transform.sh SCR_013731-NXR_Organisms_DEV-RIN`.
 8. This will take the sample data and try to transform it, look at the output and make sure the transform output looks how you intended it to look.
 9. Make sure the results of the transform look good, if there are any issues with the transform then edit your transformation script and then do steps 5 - 7 again.
@@ -266,7 +267,8 @@ transform columns "$.'database'", "$.'catalog_id'" to "disco.v_uuid" apply uuid(
 #### Test QC rules
 
 1. If the results from the transform look good then navigate to the "QualityAssuranceRules" folder in your code editor and create a new file in the directory named the same as the file you created in the "Source Descriptors" folder: `SCR_013731-NXR_Organisms_DEV-RIN.yml`.
-2. If the RRIDs of your resource contain only numbers similar to **RRID:NXR_0220** then copy this information into your QC file:
+2. If the RRIDs of your resource contain only numbers similar to **RRID:NXR\_0220** then copy this information into your QC file:
+
 ```
 "ValueExists":
   - path: "$.rrid.curie"
@@ -278,7 +280,9 @@ transform columns "$.'database'", "$.'catalog_id'" to "disco.v_uuid" apply uuid(
   - path: "$.item.docid"
     valueRegex: ".+"
 ```
-3. If the RRIDs of your resource contain both letters and number similar to **RRID:XEP_Gal047** then copy this information into your QC file instead to include lowercase and uppercase letters along with numbers in your QC check:
+
+3. If the RRIDs of your resource contain both letters and number similar to **RRID:XEP\_Gal047** then copy this information into your QC file instead to include lowercase and uppercase letters along with numbers in your QC check:
+
 ```
 "ValueExists":
   - path: "$.rrid.curie"
@@ -290,6 +294,7 @@ transform columns "$.'database'", "$.'catalog_id'" to "disco.v_uuid" apply uuid(
   - path: "$.item.docid"
     valueRegex: ".+"
 ```
+
 4. Save your changes and in the code editor in your terminal run the git commands from previous steps to push your changes up to Github.
 5. Then while connected to the Foundry machine and in "Foundry-Data" run `git pull` to pull your changes into foundry. You should see your file name show up after this step.
 6. Then run the script `test_qc.sh SCR_013731-NXR_Organisms_DEV-RIN` to test that your QC file is working. You should see a message 'QC rules syntax OK'.
@@ -308,31 +313,35 @@ transform columns "$.'database'", "$.'catalog_id'" to "disco.v_uuid" apply uuid(
 
 #### Editing a Source's Transformation After Ingestion
 
-- If you edit a source's transformation file after you have already ingested that source's records then you need to send the records back to the transform and run them again. 
-  - For example if you edited the transformation for `SCR_013731-NXR_Organisms_DEV-RIN` after already ingesting the records and after updating the source using `update_source.sh SCR_013731-NXR_Organisms_DEV-RIN` then complete these steps:
-    1. Run the command `status SCR_013731-NXR_Organisms_DEV-RIN` and make sure there are no records with errors. 
-    2. IF there are NO errors then run the command `run status SCR_013731-NXR_Organisms_DEV-RIN status:finished step:transform to_end`. This will re-run the records starting with the transformation step.
-    3. Check the status of the run periodically using `status SCR_013731-NXR_Organisms_DEV-RIN`.
-    4. IF there are errors then run the command `run status SCR_013731-NXR_Organisms_DEV-RIN status:error step:transform to_end` first and then run the command `run status SCR_013731-NXR_Organisms_DEV-RIN status:finished step:transform to_end` afterwards.
+* If you edit a source's transformation file after you have already ingested that source's records then you need to send the records back to the transform and run them again.
+  * For example if you edited the transformation for `SCR_013731-NXR_Organisms_DEV-RIN` after already ingesting the records and after updating the source using `update_source.sh SCR_013731-NXR_Organisms_DEV-RIN` then complete these steps:
+    1. Run the command `status SCR_013731-NXR_Organisms_DEV-RIN` and make sure there are no records with errors.
+    2. IF there are NO errors then run the command `update SCR_013731-NXR_Organisms_DEV-RIN`
+    3. Then run the command `run status SCR_013731-NXR_Organisms_DEV-RIN status:finished step:transform to_end`. This will re-run the records starting with the transformation step.
+    4. Check the status of the run periodically using `status SCR_013731-NXR_Organisms_DEV-RIN`.
+    5. IF there are errors then run the command `run status SCR_013731-NXR_Organisms_DEV-RIN status:error step:transform to_end` first and then run the command `run status SCR_013731-NXR_Organisms_DEV-RIN status:finished step:transform to_end` afterwards.
 
 #### Ingesting Records
 
-- Now with your resource in Foundry you can run the initial ingestion.
+* Now with your resource in Foundry you can run the initial ingestion.
   1. Run the command `ingest <source_name>` to start the initial ingestion. EX: `ingest SCR_013731-NXR_Organisms_DEV-RIN`.
   2. Follow up with the `status <source_name>` command to see the status of your ingestion. EX: `status SCR_013731-NXR_Organisms_DEV-RIN`.
   3. Using the command `!!` will repeat your last command so as long as `status <source_name>` is the last command you ran you can use `!!` to see the status of your ingestion.
   4. Periodically check the status of your resource ingestion. Troubleshoot any error records and fix them. The number of finished records should equal the amount of ingested records for the initial ingestion.
 
 #### Indexing Records
-- After successfully ingesting your records with no errors you can index them to view them on the development server to confirm they look correct.
-- You must get the DEV password from Jeff.
-- This is the basis for the command. Fill in the information for a given resource:
-  ```
-  index <sourceID> <status-2-match> <url> [-filter <filter-jsonpath-exp>] [-batch <batch-size>]
-		[-mode <[full]|update>] [-mapping <mapping-file>] [-pklist <pk-list-file>]
-		[-user <ES-user>] [-pwd <ES-pwd>] [-properties <props-file>]
-		[-idList <mongo-id-list-file>] [-idJsonPath <JsonPath to the ES record ID surrounded by quotes>]
-		[-verbose <true|[false]>]
-		(e.g. index biocaddie-0006 transformed.1 http://52.32.231.227:9200/geo_20151106/dataset)
-  ```
-  - Once the records are done indexing you should be able to view them on Scicrunch on the "New Index" while logged in to a curator account.
+
+* After successfully ingesting your records with no errors you can index them to view them on the development server to confirm they look correct.
+* You must get the DEV password from Jeff.
+*   This is the basis for the command. Fill in the information for a given resource:
+
+    ```
+    index <sourceID> <status-2-match> <url> [-filter <filter-jsonpath-exp>] [-batch <batch-size>]
+      	[-mode <[full]|update>] [-mapping <mapping-file>] [-pklist <pk-list-file>]
+      	[-user <ES-user>] [-pwd <ES-pwd>] [-properties <props-file>]
+      	[-idList <mongo-id-list-file>] [-idJsonPath <JsonPath to the ES record ID surrounded by quotes>]
+      	[-verbose <true|[false]>]
+      	(e.g. index biocaddie-0006 transformed.1 http://52.32.231.227:9200/geo_20151106/dataset)
+    ```
+
+    * Once the records are done indexing you should be able to view them on Scicrunch on the "New Index" while logged in to a curator account.
